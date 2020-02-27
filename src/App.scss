@@ -1,20 +1,19 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Ubuntu", sans-serif;
-}
-
-ul, ol {
-  list-style-type: none;
-}
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
 
 .app-wrapper {
   display: grid;
-  grid-template-columns: 200px auto;
   grid-gap: 1rem;
-  width: 1200px;
-  margin: 2rem auto;
+  @media screen and (max-width: $sm){
+    width: 100%;
+    grid-gap: 0.5rem;
+  }
+
+  //grid-template-columns: 200px auto;
+  //width: 1200px;
+  //margin: 2rem auto;
 }
 
 .inner-container {

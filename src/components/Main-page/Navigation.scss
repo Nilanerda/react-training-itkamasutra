@@ -1,0 +1,40 @@
+@import "../../App";
+
+.app-nav {
+    background-color: #89ff64;
+    height: 30rem;
+    @media screen and (max-width: $sm){
+        height: auto;
+    }
+    .inner-container {
+        padding: 20px;
+        @media screen and (max-width: $sm){
+            padding: 0;
+        }
+        .app-nav-panel {
+            @media screen and (max-width: $sm){
+                display: flex;
+                flex-direction: row;
+                margin: 0 auto;
+            }
+            li {
+                margin: 1rem 0;
+                //&:nth-child(1) {
+                //    margin-top: 0;
+                //}
+                //&:last-of-type {
+                //    margin-top: 3rem;
+                //}
+                a {
+                    font-size: 1.5rem;
+                    color: #ffffff;
+                    text-decoration: none;
+                    @media screen and (max-width: $sm){
+                        padding: 0.5rem;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}

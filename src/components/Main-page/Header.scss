@@ -1,0 +1,23 @@
+@import "../../App";
+
+.app-header {
+    background-color: #89ff64;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    height: 4rem;
+    @media screen and (max-width: $sm){
+        grid-column-end: 2;
+    }
+    .inner-container {
+        @media screen and (max-width: $sm){
+            justify-content: center;
+        }
+        a {
+            display: inline-block;
+            background-image: url('https://image.flaticon.com/icons/png/512/1151/1151960.png');
+            width: 45px;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+}

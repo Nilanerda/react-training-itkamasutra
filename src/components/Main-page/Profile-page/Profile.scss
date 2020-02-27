@@ -1,0 +1,132 @@
+@import "../../../App";
+
+.app-main {
+    .inner-container {
+        padding: 0;
+        flex-direction: column;
+        .main-wrapper-picture {
+            background-image: url('https://html5box.com/html5lightbox/images/lakeandballoon.jpg');
+            height: 15rem;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            @media screen and (max-width: $sm){
+                height: 10rem;
+            }
+        }
+        .main-info-wrapper {
+            width: 80%;
+            @media screen and (max-width: $sm){
+                width: 100%;
+                padding: 1.5rem;
+            }
+            .main-profile-info {
+                margin-top: 1rem;
+                display: flex;
+                flex-direction: row;
+                @media screen and (max-width: $sm){
+                    position: relative;
+                    top: -5rem;
+                    margin-top: 0;
+                    flex-direction: column;
+                }
+                .profile-avatar {
+                    background-image: url('https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2019/04/1556504110pug.jpg');
+                    width: 10rem;
+                    height: 10rem;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    @media screen and (max-width: $sm){
+                        width: 7rem;
+                        height: 7rem;
+                        border-radius: 50%;
+                        align-self: center;
+                    }
+                }
+                .profile-info {
+                    margin: 1rem 0 0 2rem;
+                    @media screen and (max-width: $sm){
+                        margin: 1rem 0 0;
+                    }
+                    .profile-info-data {
+                        display: flex;
+                        flex-direction: column;
+                        li {
+                            font-size: 1.3rem;
+                            margin: 0.5rem 0;
+                            &:nth-child(1) {
+                                margin-top: 0;
+                                margin-bottom: 2rem;
+                                font-size: 1.5rem;
+                                align-self: center;
+                            }
+                        }
+                    }
+                }
+            }
+            .main-posts-field {
+                margin: 1rem 0 0 1rem;
+                display: flex;
+                flex-direction: column;
+                @media screen and (max-width: $sm){
+                    margin: 0;
+                }
+                & > p {
+                    font-size: 1.5rem;
+                    margin-bottom: 1rem;
+                }
+                textarea {
+                    background-color: #d7e1e1;
+                    padding: 1rem;
+                    resize: none;
+                    border: none;
+                    font-size: 1rem;
+                }
+                button {
+                    display: inline-flex;
+                    align-self: flex-end;
+                    padding: 0.4rem 0.4rem 0.4rem 1rem;
+                    width: 150px;
+                    color: #ffffff;
+                    background: #89ff64;
+                    border: none;
+                    font-size: 1.3rem;
+                    margin: 1rem 0;
+                    cursor: pointer;
+                }
+                .post-instance {
+                    margin: 2rem 0;
+                    display: flex;
+                    flex-direction: row;
+                    .post-instance-wrapper {
+                        position: relative;
+                        .post-instance-avatar {
+                            width: 4rem;
+                            height: 4rem;
+                            background-image: url('https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2019/04/1556504110pug.jpg');
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center;
+                            border-radius: 50%;
+                            position: absolute;
+                            @media screen and (max-width: $sm){
+                                width: 3rem;
+                                height: 3rem;
+                            }
+                        }
+                        .post-data {
+                            padding-left: 5.5rem;
+                            @media screen and (max-width: $sm){
+                                padding-left: 4rem;
+                            }
+                            p {
+                                line-height: 1.6rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
