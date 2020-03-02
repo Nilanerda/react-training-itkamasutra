@@ -1,0 +1,27 @@
+.create-post-field {
+    display: flex;
+    flex-direction: column;
+    p {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    textarea {
+        background-color: #d7e1e1;
+        padding: 1rem;
+        resize: none;
+        border: none;
+        font-size: 1rem;
+    }
+    button {
+        display: inline-flex;
+        align-self: flex-end;
+        padding: 0.4rem 0.4rem 0.4rem 1rem;
+        width: 150px;
+        color: #ffffff;
+        background: #89ff64;
+        border: none;
+        font-size: 1.3rem;
+        margin: 1rem 0;
+        cursor: pointer;
+    }
+}
