@@ -1,4 +1,4 @@
-@import "../../App";
+@import "../../media-breakpoint-variables";
 
 .app-header {
     background-color: #89ff64;
@@ -13,6 +13,10 @@
         grid-column-end: 3;
     }
     .inner-container {
+        height: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
         @media screen and (max-width: $lg){
             justify-content: center;
         }
