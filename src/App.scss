@@ -7,8 +7,16 @@
     width: 100%;
     grid-gap: 0.5rem;
   }
-
-  //grid-template-columns: 200px auto;
-  //width: 1200px;
-  //margin: 2rem auto;
+  @media screen and (min-width: $xxl) and (max-width: $xxxl - 1){
+    width: 1500px;
+    margin: 0 auto;
+  }
+  @media screen and (min-width: $xxxl){
+    width: 1800px;
+    margin: 0 auto;
+  }
+  @media screen and (min-width: $xxxxl){
+    width: 2000px;
+    margin: 0 auto;
+  }
 }
