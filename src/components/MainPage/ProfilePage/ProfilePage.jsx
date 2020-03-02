@@ -1,5 +1,5 @@
 import React from "react";
-import "./Profile-page.scss";
+import "./ProfilePage.scss";
 import Wallpaper from "./Wallpaper/Wallpaper";
 import Content from "./Content/Content";
 

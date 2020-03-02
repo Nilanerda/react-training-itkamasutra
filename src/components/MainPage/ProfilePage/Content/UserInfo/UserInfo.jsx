@@ -1,7 +1,7 @@
 import React from "react";
-import './Info.scss';
+import './UserInfo.scss';
 
-const Info = () => {
+const UserInfo = () => {
     return (
         <div className="main-profile-info">
             <div className="profile-avatar"></div>
@@ -18,4 +18,4 @@ const Info = () => {
     )
 };
 
-export default Info;
+export default UserInfo;

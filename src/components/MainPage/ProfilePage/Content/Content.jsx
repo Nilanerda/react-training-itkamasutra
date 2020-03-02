@@ -1,12 +1,12 @@
 import React from "react";
 import './Content.scss';
-import Info from "./Info/Info";
+import UserInfo from "./UserInfo/UserInfo";
 import Posts from "./Posts/Posts";
 
 const Content = () => {
     return (
         <div className="main-info-wrapper">
-            <Info/>
+            <UserInfo/>
             <Posts/>
         </div>
 

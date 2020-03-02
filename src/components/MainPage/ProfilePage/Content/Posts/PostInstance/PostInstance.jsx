@@ -1,5 +1,5 @@
 import React from "react";
-import './Post-instance.scss';
+import './PostInstance.scss';
 
 const PostInstance = () => {
     return (

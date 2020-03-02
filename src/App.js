@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.scss';
-import Header from "./components/Main-page/Header/Header";
-import Navigation from "./components/Main-page/Navigation/Navigation";
-import ProfilePage from "./components/Main-page/Profile-page/Profile-page";
+import Header from "./components/MainPage/Header/Header";
+import Navigation from "./components/MainPage/Navigation/Navigation";
+import ProfilePage from "./components/MainPage/ProfilePage/ProfilePage";
 
 function App() {
     return (
