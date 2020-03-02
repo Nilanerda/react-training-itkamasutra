@@ -6,7 +6,7 @@ $xl: 1200px;
 .app-wrapper {
   display: grid;
   grid-gap: 1rem;
-  @media screen and (max-width: $sm){
+  @media screen and (max-width: $lg){
     width: 100%;
     grid-gap: 0.5rem;
   }

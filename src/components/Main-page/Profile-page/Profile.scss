@@ -10,25 +10,39 @@
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            @media screen and (max-width: $sm){
+            @media screen and (max-width: $lg){
                 height: 10rem;
             }
         }
         .main-info-wrapper {
-            width: 80%;
-            @media screen and (max-width: $sm){
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            @media screen and (max-width: $lg){
                 width: 100%;
                 padding: 1.5rem;
             }
+            @media screen and (min-width: $md) and (max-width: $lg - 1){
+                padding: 1.5rem 3rem;
+            }
+            @media screen and (min-width: $lg){
+                position: relative;
+                top: -7rem;
+            }
             .main-profile-info {
-                margin-top: 1rem;
+                margin: 1rem 0 0 1rem;
                 display: flex;
                 flex-direction: row;
-                @media screen and (max-width: $sm){
+                @media screen and (max-width: $lg){
                     position: relative;
                     top: -5rem;
-                    margin-top: 0;
+                    margin: 0;
                     flex-direction: column;
+                }
+                @media screen and (min-width: $lg){
+                    margin: 2rem;
+                    padding-bottom: 3rem;
+                    border-bottom: 5px dotted #89ff64;
                 }
                 .profile-avatar {
                     background-image: url('https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2019/04/1556504110pug.jpg');
@@ -37,7 +51,7 @@
                     background-repeat: no-repeat;
                     background-size: cover;
                     background-position: center;
-                    @media screen and (max-width: $sm){
+                    @media screen and (max-width: $lg){
                         width: 7rem;
                         height: 7rem;
                         border-radius: 50%;
@@ -46,7 +60,7 @@
                 }
                 .profile-info {
                     margin: 1rem 0 0 2rem;
-                    @media screen and (max-width: $sm){
+                    @media screen and (max-width: $lg){
                         margin: 1rem 0 0;
                     }
                     .profile-info-data {
@@ -56,20 +70,30 @@
                             font-size: 1.3rem;
                             margin: 0.5rem 0;
                             &:nth-child(1) {
-                                margin-top: 0;
-                                margin-bottom: 2rem;
-                                font-size: 1.5rem;
-                                align-self: center;
+                                font-size: 2rem;
+                                @media screen and (max-width: $lg){
+                                    margin-top: 0;
+                                    margin-bottom: 2rem;
+                                    align-self: center;
+                                }
+                                @media screen and (min-width: $lg){
+                                    margin-bottom: 2rem;
+                                    color: #ffffff;
+                                }
                             }
                         }
                     }
                 }
             }
             .main-posts-field {
-                margin: 1rem 0 0 1rem;
                 display: flex;
                 flex-direction: column;
-                @media screen and (max-width: $sm){
+                @media screen and (min-width: $lg){
+                    width: 80%;
+                    align-self: center;
+                    margin-top: 3rem;
+                }
+                @media screen and (max-width: $lg){
                     margin: 0;
                 }
                 & > p {
@@ -110,14 +134,14 @@
                             background-position: center;
                             border-radius: 50%;
                             position: absolute;
-                            @media screen and (max-width: $sm){
+                            @media screen and (max-width: $lg){
                                 width: 3rem;
                                 height: 3rem;
                             }
                         }
                         .post-data {
                             padding-left: 5.5rem;
-                            @media screen and (max-width: $sm){
+                            @media screen and (max-width: $lg){
                                 padding-left: 4rem;
                             }
                             p {

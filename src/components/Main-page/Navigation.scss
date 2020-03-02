@@ -2,36 +2,46 @@
 
 .app-nav {
     background-color: #89ff64;
-    height: 30rem;
-    @media screen and (max-width: $sm){
+    height: 100%;
+    @media screen and (max-width: $lg){
         height: auto;
     }
+    @media screen and (min-width: $lg) {
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
     .inner-container {
-        padding: 20px;
-        @media screen and (max-width: $sm){
+        padding: 0 20px;
+        @media screen and (max-width: $lg){
             padding: 0;
         }
         .app-nav-panel {
-            @media screen and (max-width: $sm){
+            position: sticky;
+            top: 0;
+            height: fit-content;
+            @media screen and (max-width: $lg){
                 display: flex;
                 flex-direction: row;
                 margin: 0 auto;
             }
             li {
                 margin: 1rem 0;
-                //&:nth-child(1) {
-                //    margin-top: 0;
-                //}
-                //&:last-of-type {
-                //    margin-top: 3rem;
-                //}
+                &:last-of-type {
+                    @media screen and (min-width: $lg + 1){
+                        margin-top: 4rem;
+
+                    }
+                }
                 a {
                     font-size: 1.5rem;
                     color: #ffffff;
                     text-decoration: none;
-                    @media screen and (max-width: $sm){
+                    @media screen and (max-width: $lg){
                         padding: 0.5rem;
                         font-size: 1rem;
+                    }
+                    @media screen and (min-width: $md) and (max-width: $lg){
+                        margin: 1rem;
                     }
                 }
             }
