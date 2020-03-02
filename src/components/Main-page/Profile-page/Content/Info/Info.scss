@@ -1,0 +1,58 @@
+@import "src/media-breakpoint-variables";
+
+.main-profile-info {
+    margin: 1rem 0 0 1rem;
+    display: flex;
+    flex-direction: row;
+    @media screen and (max-width: $lg){
+        position: relative;
+        top: -5rem;
+        margin: 0;
+        flex-direction: column;
+    }
+    @media screen and (min-width: $lg + 1){
+        margin: 2rem;
+        padding-bottom: 3rem;
+        border-bottom: 5px dotted #89ff64;
+    }
+    .profile-avatar {
+        background-image: url('https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2019/04/1556504110pug.jpg');
+        width: 10rem;
+        height: 10rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        @media screen and (max-width: $lg){
+            width: 7rem;
+            height: 7rem;
+            border-radius: 50%;
+            align-self: center;
+        }
+    }
+    .profile-info {
+        margin: 1rem 0 0 2rem;
+        @media screen and (max-width: $lg){
+            margin: 1rem 0 0;
+        }
+        .profile-info-data {
+            display: flex;
+            flex-direction: column;
+            li {
+                font-size: 1.3rem;
+                margin: 0.5rem 0;
+                &:nth-child(1) {
+                    font-size: 2rem;
+                    @media screen and (max-width: $lg){
+                        margin-top: 0;
+                        margin-bottom: 2rem;
+                        align-self: center;
+                    }
+                    @media screen and (min-width: $lg + 1){
+                        margin-bottom: 2rem;
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+}

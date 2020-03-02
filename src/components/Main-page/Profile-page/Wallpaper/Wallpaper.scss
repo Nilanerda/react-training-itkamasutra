@@ -1,0 +1,12 @@
+@import "src/media-breakpoint-variables";
+
+.main-wrapper-picture {
+    background-image: url('https://html5box.com/html5lightbox/images/lakeandballoon.jpg');
+    height: 15rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @media screen and (max-width: $lg){
+        height: 10rem;
+    }
+}

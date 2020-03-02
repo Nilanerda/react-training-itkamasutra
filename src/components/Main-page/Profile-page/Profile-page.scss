@@ -1,0 +1,10 @@
+@import "../../../media-breakpoint-variables";
+
+.app-main {
+    .inner-container {
+        padding: 0;
+        flex-direction: column;
+        height: 100%;
+        display: flex;
+    }
+}
