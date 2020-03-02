@@ -7,6 +7,9 @@
     width: 100%;
     grid-gap: 0.5rem;
   }
+  @media screen and (min-width: $lg + 1){
+    grid-template-columns: 1fr 10fr;
+  }
   @media screen and (min-width: $xxl) and (max-width: $xxxl - 1){
     width: 1500px;
     margin: 0 auto;
