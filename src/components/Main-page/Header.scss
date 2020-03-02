@@ -8,7 +8,7 @@
     @media screen and (max-width: $lg){
         grid-column-end: 2;
     }
-    @media screen and (min-width: $lg){
+    @media screen and (min-width: $lg + 1){
         grid-column-start: 2;
         grid-column-end: 3;
     }

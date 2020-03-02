@@ -22,10 +22,10 @@
                 width: 100%;
                 padding: 1.5rem;
             }
-            @media screen and (min-width: $md) and (max-width: $lg - 1){
+            @media screen and (min-width: $md) and (max-width: $lg){
                 padding: 1.5rem 3rem;
             }
-            @media screen and (min-width: $lg){
+            @media screen and (min-width: $lg + 1){
                 position: relative;
                 top: -7rem;
             }
@@ -39,7 +39,7 @@
                     margin: 0;
                     flex-direction: column;
                 }
-                @media screen and (min-width: $lg){
+                @media screen and (min-width: $lg + 1){
                     margin: 2rem;
                     padding-bottom: 3rem;
                     border-bottom: 5px dotted #89ff64;
@@ -76,7 +76,7 @@
                                     margin-bottom: 2rem;
                                     align-self: center;
                                 }
-                                @media screen and (min-width: $lg){
+                                @media screen and (min-width: $lg + 1){
                                     margin-bottom: 2rem;
                                     color: #ffffff;
                                 }
@@ -88,7 +88,7 @@
             .main-posts-field {
                 display: flex;
                 flex-direction: column;
-                @media screen and (min-width: $lg){
+                @media screen and (min-width: $lg + 1){
                     width: 80%;
                     align-self: center;
                     margin-top: 3rem;
