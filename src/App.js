@@ -9,7 +9,9 @@ function App() {
         <div className="app-wrapper">
             <Header/>
             <Navigation/>
-            <ProfilePage/>
+            <main className="app-main">
+                <ProfilePage/>
+            </main>
         </div>
     );
 }

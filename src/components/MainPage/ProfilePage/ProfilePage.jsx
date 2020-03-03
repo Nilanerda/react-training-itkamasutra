@@ -5,12 +5,10 @@ import Content from "./Content/Content";
 
 const ProfilePage = () => {
     return (
-        <main className="app-main">
-            <div className="inner-container">
-                <Wallpaper/>
-                <Content/>
-            </div>
-        </main>
+        <div className="inner-container">
+            <Wallpaper/>
+            <Content/>
+        </div>
     )
 };
 
