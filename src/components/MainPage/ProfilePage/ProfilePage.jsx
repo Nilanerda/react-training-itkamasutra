@@ -1,11 +1,11 @@
 import React from "react";
-import "./ProfilePage.scss";
+import styles from "./ProfilePage.module.scss";
 import Wallpaper from "./Wallpaper/Wallpaper";
 import Content from "./Content/Content";
 
 const ProfilePage = () => {
     return (
-        <div className="inner-container">
+        <div className={styles.innerContainer}>
             <Wallpaper/>
             <Content/>
         </div>

@@ -1,8 +1,10 @@
 import React from "react";
-import './DialogPage.scss';
+import styles from './DialogPage.module.scss';
 
 const DialogPage = () => {
-
+    return (
+        <div className={styles.innerContainer}>asd</div>
+    )
 };
 
 export default DialogPage;
