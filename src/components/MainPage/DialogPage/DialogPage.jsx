@@ -47,7 +47,20 @@ const DialogPage = () => {
                     </div>
                 </div>
             </div>
-            <div className={styles.chatField}>a</div>
+            <div className={styles.chatField}>
+                <div className={styles.currentRecipientChat}>
+                    <div className={`${styles.messageInstance} ${styles.receivedMessage}`}>blah</div>
+                    <div className={`${styles.messageInstance} ${styles.sentMessage}`}>lorem</div>
+                    <div className={`${styles.messageInstance} ${styles.receivedMessage}`}>blah</div>
+                    <div className={`${styles.messageInstance} ${styles.sentMessage}`}>lorem</div>
+                    <div className={`${styles.messageInstance} ${styles.receivedMessage}`}>blah</div>
+                    <div className={`${styles.messageInstance} ${styles.sentMessage}`}>lorem</div>
+                    <div className={`${styles.messageInstance} ${styles.receivedMessage}`}>blah</div>
+                    <div className={`${styles.messageInstance} ${styles.sentMessage}`}>lorem</div>
+                    <div className={`${styles.messageInstance} ${styles.receivedMessage}`}>blah</div>
+                    <div className={`${styles.messageInstance} ${styles.sentMessage}`}>lorem</div>
+                </div>
+            </div>
         </div>
     )
 };

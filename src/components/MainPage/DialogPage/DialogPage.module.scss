@@ -1,8 +1,13 @@
+@import "src/media-breakpoint-variables";
+
 .innerContainer {
     display: flex;
     flex-direction: row;
     height: 100%;
     padding: 0;
+    @media screen and (max-width: $lg) {
+        padding: 1rem 2rem 0;
+    }
 
     .recipientListField {
         width: 25%;
@@ -13,11 +18,16 @@
         position: sticky;
         top: 5rem;
         height: calc(100vh - 5rem);
+        @media screen and (max-width: $lg) {
+            top: 1rem;
+            height: calc(100vh - 1rem);
+        }
 
         .recipientSearchField {
             padding: 0 1rem 1rem;
             margin-right: -1rem;
             margin-left: -1rem;
+            height: 4rem;
 
             input {
                 width: 100%;
@@ -37,6 +47,9 @@
             overflow-y: auto;
             margin-right: -1rem;
             border-top: 3px dotted #89ff64;
+            @media screen and (max-width: $lg) {
+                border: none;
+            }
 
             &::-webkit-scrollbar {
                 width: 10px;
@@ -60,6 +73,9 @@
                 padding: 1rem 0 1rem 1rem;
                 margin: 0.5rem 0;
                 align-items: center;
+                @media screen and (max-width: $lg) {
+                    padding: 1rem 0;
+                }
 
                 .recipientAvatar {
                     width: 3rem;
@@ -80,6 +96,33 @@
 
     .chatField {
         width: 75%;
-        height: 200vh;
+
+        .currentRecipientChat {
+            display: flex;
+            flex-direction: column;
+            padding: 0 3rem;
+            margin: 2rem 0;
+            min-height: 100vh;
+
+            .messageInstance {
+                display: inline-flex;
+                background: {
+                    color: #f1f1f1;
+                };
+                width: fit-content;
+                max-width: 70%;
+                padding: 2rem;
+                margin-bottom: 1.5rem;
+                border-radius: 25px;
+            }
+            .receivedMessage {
+                border-radius: 25px 25px 25px 0;
+                align-self: flex-start;
+            }
+            .sentMessage {
+                border-radius: 25px 25px 0 25px;
+                align-self: flex-end;
+            }
+        }
     }
 }
