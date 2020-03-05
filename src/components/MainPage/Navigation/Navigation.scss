@@ -45,6 +45,9 @@
                     @media screen and (min-width: $md) and (max-width: $lg){
                         margin: 1rem;
                     }
+                    &.active {
+                        color: #000;
+                    }
                 }
             }
         }
