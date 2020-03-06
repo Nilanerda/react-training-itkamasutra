@@ -9,6 +9,9 @@
     @media screen and (max-width: $lg) {
         padding: 1rem 2rem 0;
     }
+    @media screen and (min-width: $md) and (max-width: $lg) {
+        height: calc(100vh - 9rem);
+    }
 
     .recipientListField {
         width: 25%;
@@ -19,6 +22,9 @@
         @media screen and (max-width: $lg) {
             top: 1rem;
             height: calc(100vh - 1rem);
+        }
+        @media screen and (min-width: $md) and (max-width: $lg) {
+            height: calc(100vh - 10rem);
         }
 
         .recipientSearchField {
@@ -102,6 +108,9 @@
             overflow-y: auto;
             margin: 0 10px 1rem 0;
             @include customScrollbar;
+            @media screen and (min-width: $md) and (max-width: $lg) {
+                margin: 0 0 1rem 0;
+            }
 
             .messageInstance {
                 display: inline-flex;
