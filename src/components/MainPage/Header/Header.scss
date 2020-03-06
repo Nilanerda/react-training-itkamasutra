@@ -11,8 +11,8 @@
     @media screen and (min-width: $lg + 1){
         grid-column-start: 2;
         grid-column-end: 3;
-        position: sticky;
-        top: 0;
+        //position: sticky;
+        //top: 0;
     }
     .inner-container {
         height: 100%;
