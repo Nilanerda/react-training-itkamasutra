@@ -1,0 +1,17 @@
+@mixin customScrollbar {
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #c3c3c3;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #a5a5a5;
+    }
+}
