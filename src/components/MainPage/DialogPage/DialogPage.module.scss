@@ -6,10 +6,11 @@
     flex-direction: row;
     height: calc(100vh - 5rem);
     padding: 0;
-    @media screen and (max-width: $lg) {
-        padding: 1rem 2rem 0;
+    @media screen and (max-width: $md - 1) {
+        height: auto;
     }
     @media screen and (min-width: $md) and (max-width: $lg) {
         height: calc(100vh - 9rem);
+        padding: 1rem 0 0 1.5rem;
     }
 }
