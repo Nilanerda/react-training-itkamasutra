@@ -1,0 +1,18 @@
+@import "src/media-breakpoint-variables";
+@import "src/custom-scrollbar";
+
+.currentRecipientChat {
+    display: flex;
+    flex-direction: column;
+    padding: 0 3rem;
+    overflow-y: auto;
+    margin: 0 10px 1rem 0;
+    @include customScrollbar;
+    @media screen and (max-width: $md - 1) {
+        margin: 0;
+        padding: 0 2rem;
+    }
+    @media screen and (min-width: $md) and (max-width: $lg) {
+        margin: 0;
+    }
+}

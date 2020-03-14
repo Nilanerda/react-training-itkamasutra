@@ -10,42 +10,4 @@
         width: 100%;
         padding-bottom: 0.5rem;
     }
-
-    .currentRecipientChat {
-        display: flex;
-        flex-direction: column;
-        padding: 0 3rem;
-        overflow-y: auto;
-        margin: 0 10px 1rem 0;
-        @include customScrollbar;
-        @media screen and (max-width: $md - 1) {
-            margin: 0;
-            padding: 0 2rem;
-        }
-        @media screen and (min-width: $md) and (max-width: $lg) {
-            margin: 0;
-        }
-
-        .messageInstance {
-            display: inline-flex;
-            background: {
-                color: #f1f1f1;
-            };
-            width: fit-content;
-            max-width: 70%;
-            padding: 2rem;
-            margin: 0.75rem 0;
-            border-radius: 25px;
-        }
-
-        .receivedMessage {
-            border-radius: 25px 25px 25px 0;
-            align-self: flex-start;
-        }
-
-        .sentMessage {
-            border-radius: 25px 25px 0 25px;
-            align-self: flex-end;
-        }
-    }
 }
