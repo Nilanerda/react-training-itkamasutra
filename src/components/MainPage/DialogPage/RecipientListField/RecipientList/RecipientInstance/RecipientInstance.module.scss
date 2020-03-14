@@ -1,0 +1,26 @@
+@import "src/media-breakpoint-variables";
+
+.recipientInstance {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 0 1rem 1rem;
+    margin: 0.5rem 0;
+    align-items: center;
+    @media screen and (max-width: $lg) {
+        padding: 1rem 0;
+    }
+
+    .recipientAvatar {
+        width: 3rem;
+        height: 3rem;
+        background-image: url('https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2019/04/1556504110pug.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+    }
+
+    .recipientName {
+        margin-left: 1rem;
+    }
+}

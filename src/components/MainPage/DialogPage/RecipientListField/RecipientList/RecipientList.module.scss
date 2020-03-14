@@ -1,0 +1,29 @@
+@import "src/media-breakpoint-variables";
+@import "src/custom-scrollbar";
+
+.recipientList {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    margin: 0 -2px 1rem 0;
+    overflow-x: hidden;
+    @media screen and (max-width: $md - 1) {
+        margin: 0;
+        padding-left: 1rem;
+    }
+    @media screen and (min-width: $md) and (max-width: $lg) {
+        margin: 0 -2px 0 0;
+    }
+    @media screen and (max-width: $lg) {
+        border: none;
+    }
+    @include customScrollbar;
+
+    &::-webkit-scrollbar {
+        width: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+}

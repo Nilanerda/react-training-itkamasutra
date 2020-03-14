@@ -1,5 +1,4 @@
 @import "src/media-breakpoint-variables";
-@import "src/custom-scrollbar";
 
 .recipientListField {
     width: 25%;
@@ -15,78 +14,5 @@
     }
     @media screen and (min-width: $md) and (max-width: $lg) {
         height: calc(100vh - 10rem);
-    }
-
-    .recipientSearchField {
-        padding: 0 1rem 1rem;
-        margin-left: -1rem;
-        height: 4rem;
-        @media screen and (max-width: $md - 1) {
-            padding: 0.5rem 1rem 0.5rem 2rem;
-        }
-
-        input {
-            width: 100%;
-            height: 100%;
-            border: none;
-            padding: 1rem;
-            outline: none;
-            font-size: 1rem;
-            background: {
-                color: #f1f1f1;
-            };
-        }
-    }
-
-    .recipientList {
-        display: flex;
-        flex-direction: column;
-        overflow-y: auto;
-        margin: 0 -2px 1rem 0;
-        overflow-x: hidden;
-        @media screen and (max-width: $md - 1) {
-            margin: 0;
-            padding-left: 1rem;
-        }
-        @media screen and (min-width: $md) and (max-width: $lg) {
-            margin: 0 -2px 0 0;
-        }
-        @media screen and (max-width: $lg) {
-            border: none;
-        }
-        @include customScrollbar;
-
-        &::-webkit-scrollbar {
-            width: 2px;
-        }
-
-        &::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .recipientInstance {
-            display: flex;
-            flex-direction: row;
-            padding: 1rem 0 1rem 1rem;
-            margin: 0.5rem 0;
-            align-items: center;
-            @media screen and (max-width: $lg) {
-                padding: 1rem 0;
-            }
-
-            .recipientAvatar {
-                width: 3rem;
-                height: 3rem;
-                background-image: url('https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2019/04/1556504110pug.jpg');
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-                border-radius: 50%;
-            }
-
-            .recipientName {
-                margin-left: 1rem;
-            }
-        }
     }
 }
