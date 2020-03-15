@@ -2,52 +2,55 @@
 
 .app-nav {
     background-color: #89ff64;
-    @media screen and (max-width: $lg){
+    @media screen and (max-width: $lg) {
         height: auto;
     }
     @media screen and (min-width: $lg + 1) {
         grid-row-start: 1;
         grid-row-end: 3;
     }
+
     .inner-container {
         padding: 0 20px;
         height: 100%;
         display: flex;
         flex-direction: row;
-        @media screen and (max-width: $lg){
+        @media screen and (max-width: $lg) {
             padding: 0;
         }
+
         .app-nav-panel {
             position: sticky;
             top: 0;
-            @media screen and (max-width: $lg){
-                height: fit-content;
+            height: fit-content;
+            @media screen and (max-width: $lg) {
                 display: flex;
                 flex-direction: row;
                 margin: 0 auto;
             }
-            @media screen and (min-width: $lg + 1){
-                min-height: 100vh;
-            }
+
             li {
                 margin: 1rem 0;
+
                 &:last-of-type {
-                    @media screen and (min-width: $lg + 1){
+                    @media screen and (min-width: $lg + 1) {
                         margin-top: 4rem;
 
                     }
                 }
+
                 a {
                     font-size: 1.5rem;
                     color: #ffffff;
                     text-decoration: none;
-                    @media screen and (max-width: $lg){
+                    @media screen and (max-width: $lg) {
                         padding: 0.5rem;
                         font-size: 1rem;
                     }
-                    @media screen and (min-width: $md) and (max-width: $lg){
+                    @media screen and (min-width: $md) and (max-width: $lg) {
                         margin: 1rem;
                     }
+
                     &.active {
                         color: #000;
                     }
