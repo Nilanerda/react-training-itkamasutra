@@ -1,12 +1,13 @@
 import React from "react";
 import styles from './RecipientInstance.module.scss';
+import {NavLink} from "react-router-dom";
 
-const RecipientInstance = () => {
+const RecipientInstance = (props) => {
     return (
-        <div className={styles.recipientInstance}>
+        <NavLink to={`${/messages/}${props.id}`} className={styles.recipientInstance}>
             <div className={styles.recipientAvatar}></div>
-            <div className={styles.recipientName}>Vasya</div>
-        </div>
+            <div className={styles.recipientName}>{props.name}</div>
+        </NavLink>
     )
 };
 
