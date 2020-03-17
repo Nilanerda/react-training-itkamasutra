@@ -3,11 +3,11 @@ import styles from "./RecipientListField.module.scss";
 import RecipientSearchField from "./RecipientSearchField/RecipientSearchField";
 import RecipientList from "./RecipientList/RecipientList";
 
-const RecipientListField = () => {
+const RecipientListField = (props) => {
     return (
         <div className={styles.recipientListField}>
             <RecipientSearchField/>
-            <RecipientList/>
+            <RecipientList recipientDataState={props.dialogPageState.recipientData}/>
         </div>
     )
 };
