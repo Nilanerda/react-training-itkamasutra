@@ -20,14 +20,5 @@
                 height: 3rem;
             }
         }
-        .post-data {
-            padding-left: 5.5rem;
-            @media screen and (max-width: $lg){
-                padding-left: 4rem;
-            }
-            p {
-                line-height: 1.6rem;
-            }
-        }
     }
 }
