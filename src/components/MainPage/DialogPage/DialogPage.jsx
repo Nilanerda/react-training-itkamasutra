@@ -7,7 +7,7 @@ const DialogPage = (props) => {
     return (
         <div className={styles.innerContainer}>
             <RecipientListField dialogPageState={props.dialogPageState}/>
-            {/*<ChatField dialogPageState={props.state.dialogPage}/>*/}
+            <ChatField dialogPageState={props.dialogPageState}/>
         </div>
     )
 };

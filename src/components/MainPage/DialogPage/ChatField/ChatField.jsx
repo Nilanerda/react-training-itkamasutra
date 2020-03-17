@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./ChatField.module.scss";
 import CurrentRecipientChat from "./CurrentRecipientChat/CurrentRecipientChat";
 
-const ChatField = () => {
+const ChatField = (props) => {
     return (
         <div className={styles.chatField}>
-            <CurrentRecipientChat/>
+            <CurrentRecipientChat currentDialogState={props.dialogPageState.messagesData}/>
         </div>
     )
 };
