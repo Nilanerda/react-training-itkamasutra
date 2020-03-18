@@ -6,7 +6,6 @@
     flex-direction: column;
     padding: 0 3rem;
     overflow-y: auto;
-    margin: 0 10px 1rem 0;
     @include customScrollbar;
     @media screen and (max-width: $md - 1) {
         margin: 0;
