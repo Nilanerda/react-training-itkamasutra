@@ -1,16 +1,24 @@
 import React from "react";
 import './CreatePost.scss';
 
-const  CreatePost = () => {
+const CreatePost = () => {
+
+    let createPostField = React.createRef();
+
+    let addPost = () => {
+        let createNewPost = createPostField.current.value;
+        alert(createNewPost);
+    };
+
     return (
         <div className="create-post-field">
             <p>My posts</p>
             <textarea name="new-post-field"
-                      id="newPostField"
+                      ref={createPostField}
                       cols="1"
                       rows="4"
                       placeholder="your news..."></textarea>
-            <button>Send</button>
+            <button onClick={addPost}>Send</button>
         </div>
     )
 };
