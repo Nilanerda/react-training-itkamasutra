@@ -1,0 +1,12 @@
+.messageInputField {
+    height: 3rem;
+    input {
+        height: 100%;
+        width: calc(100% + 2px);
+        border: none;
+        background: #f1f1f1;
+        outline: none;
+        padding: 0 1rem;
+        margin-left: -2px;
+    }
+}
