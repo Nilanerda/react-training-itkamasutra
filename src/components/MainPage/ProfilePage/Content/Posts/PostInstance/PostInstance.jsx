@@ -2,12 +2,12 @@ import React from "react";
 import './PostInstance.scss';
 import PostInstanceData from "./PostInstanceData/PostInstanceData";
 
-const PostInstance = () => {
+const PostInstance = (props) => {
     return (
         <article className="post-instance">
             <div className="post-instance-wrapper">
                 <div className="post-instance-avatar"></div>
-                <PostInstanceData/>
+                <PostInstanceData post={props.post}/>
             </div>
         </article>
     )

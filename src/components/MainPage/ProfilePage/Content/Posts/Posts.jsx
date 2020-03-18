@@ -3,11 +3,12 @@ import './Posts.scss';
 import CreatePost from "./CreatePost/CreatePost";
 import PostInstance from "./PostInstance/PostInstance";
 
-const Posts = () => {
+const Posts = (props) => {
+    let postInstance = props.profilePageState.map( (post) => <PostInstance id={post.id} post={post.post}/> );
     return (
         <div className="main-posts-field">
             <CreatePost/>
-            <PostInstance/>
+            {postInstance}
         </div>
     )
 };

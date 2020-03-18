@@ -3,11 +3,11 @@ import styles from "./ProfilePage.module.scss";
 import Wallpaper from "./Wallpaper/Wallpaper";
 import Content from "./Content/Content";
 
-const ProfilePage = () => {
+const ProfilePage = (props) => {
     return (
         <div className={styles.innerContainer}>
             <Wallpaper/>
-            <Content/>
+            <Content profilePageState={props.profilePageState}/>
         </div>
     )
 };

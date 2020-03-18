@@ -3,11 +3,11 @@ import './Content.scss';
 import UserInfo from "./UserInfo/UserInfo";
 import Posts from "./Posts/Posts";
 
-const Content = () => {
+const Content = (props) => {
     return (
         <div className="main-info-wrapper">
             <UserInfo/>
-            <Posts/>
+            <Posts profilePageState={props.profilePageState.postsData}/>
         </div>
 
     )
