@@ -13,7 +13,7 @@ function App(props) {
                 <Header/>
                 <Navigation/>
                 <main className="app-main">
-                    <Route path='/profile' render={() => <ProfilePage profilePageState={props.state.profilePage}/>}/>
+                    <Route path='/profile' render={() => <ProfilePage profilePageState={props.state.profilePage} addPost={props.addPost}/>}/>
                     <Route path='/messages' render={() => <DialogPage dialogPageState={props.state.dialogPage}/>}/>
                 </main>
             </div>

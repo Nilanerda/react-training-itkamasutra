@@ -1,13 +1,12 @@
 import React from "react";
 import './CreatePost.scss';
 
-const CreatePost = () => {
-
+const CreatePost = (props) => {
     let createPostField = React.createRef();
 
     let addPost = () => {
         let createNewPost = createPostField.current.value;
-        alert(createNewPost);
+        props.addPost(createNewPost);
     };
 
     return (
