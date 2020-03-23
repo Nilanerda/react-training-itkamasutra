@@ -7,7 +7,9 @@ const ProfilePage = (props) => {
     return (
         <div className={styles.innerContainer}>
             <Wallpaper/>
-            <Content profilePageState={props.profilePageState} addPost={props.addPost}/>
+            <Content profilePageState={props.profilePageState}
+                     addPost={props.addPost}
+                     updateNewPostValue={props.updateNewPostValue}/>
         </div>
     )
 };
