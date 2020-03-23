@@ -1,3 +1,5 @@
+import {renderEntireTree} from "./render";
+
 let state = {
     dialogPage: {
         messagesData: [
@@ -31,16 +33,24 @@ let state = {
                 id: 3,
                 post: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda atque dicta dolore dolorum ex id in necessitatibus numquam pariatur perspiciatis praesentium quae quam rem soluta tempora temporibus vel vero, voluptatum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad adipisci aliquam assumenda consectetur dolorum ipsam omnis, ratione saepe veniam! Assumenda corporis inventore iusto labore magni quam quisquam repellat sint! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet at explicabo harum iste nemo quam quisquam sequi sunt vero! Blanditiis dolorem, est exercitationem magnam minus molestiae nemo temporibus voluptatem?'
             }
-        ]
+        ],
+        newPostValue: 'your news...'
     }
 };
 
-export let addPost = (newMessage) => {
+export let addPost = () => {
     let newPostData = {
         id: 4,
-        post: newMessage,
+        post: state.profilePage.newPostValue,
     };
     state.profilePage.postsData.push(newPostData);
+    state.profilePage.newPostValue = '';
+    renderEntireTree(state);
+};
+
+export let updateNewPostValue = (updatedValue) => {
+    state.profilePage.newPostValue = updatedValue;
+    renderEntireTree(state);
 };
 
 export default state;
