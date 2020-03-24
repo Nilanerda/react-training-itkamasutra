@@ -2,22 +2,22 @@
 
 .post-instance {
     margin: 2rem 0;
-    display: flex;
-    flex-direction: row;
     .post-instance-wrapper {
-        position: relative;
-        .post-instance-avatar {
-            width: 4rem;
-            height: 4rem;
-            background-image: url('https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2019/04/1556504110pug.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            border-radius: 50%;
-            position: absolute;
-            @media screen and (max-width: $lg){
-                width: 3rem;
-                height: 3rem;
+        display: flex;
+        .avatar-field {
+            height: fit-content;
+            .post-instance-avatar {
+                width: 4rem;
+                height: 4rem;
+                background-image: url('https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2019/04/1556504110pug.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                border-radius: 50%;
+                @media screen and (max-width: $lg){
+                    width: 3rem;
+                    height: 3rem;
+                }
             }
         }
     }

@@ -1,9 +1,9 @@
 @import "src/media-breakpoint-variables";
 
 .post-data {
-    padding-left: 5.5rem;
+    padding-left: 3rem;
     @media screen and (max-width: $lg){
-        padding-left: 4rem;
+        padding-left: 2rem;
     }
     p {
         line-height: 1.6rem;
