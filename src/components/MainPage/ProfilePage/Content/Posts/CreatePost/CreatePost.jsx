@@ -21,6 +21,7 @@ const CreatePost = (props) => {
                       ref={createPostField}
                       cols="1"
                       rows="4"
+                      placeholder='your news...'
                       value={props.newPostValue}/>
             <button onClick={addPost}>Send</button>
         </div>
