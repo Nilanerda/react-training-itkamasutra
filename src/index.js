@@ -2,20 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import './index.css';
-import state, {subscribe, addPost, updateNewPostValue} from "./state";
+import store from "./state";
 import App from './App';
 import {BrowserRouter} from "react-router-dom";
 
  let renderEntireTree = (state) => {
     ReactDOM.render(
         <BrowserRouter>
-            <App state={state} addPost={addPost} updateNewPostValue={updateNewPostValue}/>
+            <App state={state} addPost={store.addPost.bind(store)} updateNewPostValue={store.updateNewPostValue.bind(store)}/>
         </BrowserRouter>, document.getElementById('root')
     );
 };
 
-renderEntireTree(state);
+renderEntireTree(store.getState());
 
-subscribe(renderEntireTree);
+store.subscribe(renderEntireTree);
 
 serviceWorker.unregister();
