@@ -8,8 +8,7 @@ const ProfilePage = (props) => {
         <div className={styles.innerContainer}>
             <Wallpaper/>
             <Content profilePageState={props.profilePageState}
-                     addPost={props.addPost}
-                     updateNewPostValue={props.updateNewPostValue}/>
+                     dispatch={props.dispatch}/>
         </div>
     )
 };

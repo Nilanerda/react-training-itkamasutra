@@ -5,12 +5,12 @@ const CreatePost = (props) => {
     let createPostField = React.createRef();
 
     let addPost = () => {
-        props.addPost();
+        props.dispatch({type: 'ADD-POST'});
     };
 
     let updatePostCreatingValue = () => {
         let currentPostValue = createPostField.current.value;
-        props.updateNewPostValue(currentPostValue);
+        props.dispatch({type: 'UPDATE-NEW-POST-VALUE', updatedValue: currentPostValue});
     };
 
     return (
