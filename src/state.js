@@ -36,26 +36,30 @@ let store = {
             newPostValue: ''
         }
     },
+    _callSubscriber() {
+    },
+
     getState() {
         return this._state;
     },
-    _callSubscriber() {
-    },
-    addPost() {
-        let newPostData = {
-            id: 4,
-            post: this._state.profilePage.newPostValue,
-        };
-        this._state.profilePage.postsData.push(newPostData);
-        this._state.profilePage.newPostValue = '';
-        this._callSubscriber(this._state);
-    },
-    updateNewPostValue(updatedValue) {
-        this._state.profilePage.newPostValue = updatedValue;
-        this._callSubscriber(this._state);
-    },
     subscribe(observer) {
         this._callSubscriber = observer;
+    },
+
+    dispatch(action) {
+        debugger;
+        if (action.type === 'ADD-POST') {
+            let newPostData = {
+                id: 4,
+                post: this._state.profilePage.newPostValue,
+            };
+            this._state.profilePage.postsData.push(newPostData);
+            this._state.profilePage.newPostValue = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-NEW-POST-VALUE') {
+            this._state.profilePage.newPostValue = action.updatedValue;
+            this._callSubscriber(this._state);
+        }
     }
 };
 
