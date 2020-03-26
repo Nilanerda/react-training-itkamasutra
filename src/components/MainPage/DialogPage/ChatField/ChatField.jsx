@@ -7,7 +7,7 @@ const ChatField = (props) => {
     return (
         <div className={styles.chatField}>
             <CurrentRecipientChat currentDialogState={props.dialogPageState.messagesData}/>
-            <MessageInput />
+            <MessageInput dialogPageState={props.dialogPageState} dispatch={props.dispatch}/>
         </div>
     )
 };

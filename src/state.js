@@ -1,5 +1,7 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_VALUE = 'UPDATE-NEW-POST-VALUE';
+const ADD_POST = 'ADD_POST';
+const UPDATE_NEW_POST_VALUE = 'UPDATE_NEW_POST_VALUE';
+const UPDATE_NEW_MESSAGE_DATA = 'UPDATE_NEW_MESSAGE_DATA';
+const SEND_MESSAGE_DATA = 'SEND_MESSAGE_DATA';
 
 let store = {
     _state: {
@@ -10,7 +12,7 @@ let store = {
                 {id: 3, message: 'Svetlana is so pretty'},
                 {id: 4, message: 'Dmytro hello'},
                 {id: 5, message: 'Guy where is my money hah?'},
-                {id: 6, message: 'Love peace'}
+                {id: 6, message: 'Love peace'},
             ],
             recipientData: [
                 {id: 1, name: 'Vasya'},
@@ -18,8 +20,9 @@ let store = {
                 {id: 3, name: 'Svetlana'},
                 {id: 4, name: 'Dmytro'},
                 {id: 5, name: 'Pavel'},
-                {id: 6, name: 'Anna'}
-            ]
+                {id: 6, name: 'Anna'},
+            ],
+            newMessagesData: ''
         },
         profilePage: {
             postsData: [
@@ -50,7 +53,6 @@ let store = {
     },
 
     dispatch(action) {
-        debugger;
         if (action.type === ADD_POST) {
             let newPostData = {
                 id: 4,
@@ -62,6 +64,14 @@ let store = {
         } else if (action.type === UPDATE_NEW_POST_VALUE) {
             this._state.profilePage.newPostValue = action.updatedValue;
             this._callSubscriber(this._state);
+        } else if (action.type === UPDATE_NEW_MESSAGE_DATA) {
+            this._state.dialogPage.newMessagesData = action.newMessageValue;
+            this._callSubscriber(this._state);
+        } else if (action.type === SEND_MESSAGE_DATA) {
+            let newMessageData = this._state.dialogPage.newMessagesData;
+            this._state.dialogPage.messagesData.push({id: 7, message: newMessageData});
+            this._state.dialogPage.newMessagesData = '';
+            this._callSubscriber(this._state);
         }
     }
 };
@@ -70,6 +80,14 @@ export const addPostCreator = () => ({type: ADD_POST});
 
 export const updatePostCreatingValueCreator = (currentPostValue) => ({
     type: UPDATE_NEW_POST_VALUE,
-    updatedValue: currentPostValue});
+    updatedValue: currentPostValue
+});
+
+export const addMessageCreator = () => ({type: SEND_MESSAGE_DATA});
+
+export const updateNewMessageDataCreator = (currentMessageValue) => ({
+    type: UPDATE_NEW_MESSAGE_DATA,
+    newMessageValue: currentMessageValue,
+});
 
 export default store;
