@@ -1,16 +1,17 @@
 import React from "react";
 import './CreatePost.scss';
+import {addPostCreator, updatePostCreatingValueCreator} from "../../../../../../state";
 
 const CreatePost = (props) => {
     let createPostField = React.createRef();
 
     let addPost = () => {
-        props.dispatch({type: 'ADD-POST'});
+        props.dispatch(addPostCreator());
     };
 
     let updatePostCreatingValue = () => {
         let currentPostValue = createPostField.current.value;
-        props.dispatch({type: 'UPDATE-NEW-POST-VALUE', updatedValue: currentPostValue});
+        props.dispatch(updatePostCreatingValueCreator(currentPostValue));
     };
 
     return (
