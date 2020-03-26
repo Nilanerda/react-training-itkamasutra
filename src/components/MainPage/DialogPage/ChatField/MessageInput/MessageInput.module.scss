@@ -1,5 +1,6 @@
 .messageInputField {
     height: 3rem;
+    display: flex;
     input {
         height: 100%;
         width: calc(100% + 2px);
@@ -8,5 +9,16 @@
         outline: none;
         padding: 0 1rem;
         margin-left: -2px;
+    }
+    button {
+        padding: 0 1.5rem;
+        background: #89ff64;
+        border: none;
+        text-transform: uppercase;
+        cursor: pointer;
+        color: #ffffff;
+        &:hover {
+            background-color: #6acd53;
+        }
     }
 }

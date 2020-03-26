@@ -5,6 +5,7 @@ const MessageInput = () => {
     return (
         <div className={styles.messageInputField}>
             <input type="text" placeholder="Message"/>
+            <button>Send</button>
         </div>
     )
 };
