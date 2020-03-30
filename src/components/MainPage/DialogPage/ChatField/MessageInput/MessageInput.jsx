@@ -1,6 +1,6 @@
 import React from "react";
 import styles from './MessageInput.module.scss';
-import {addMessageCreator, updateNewMessageValueCreator} from "../../../../../state";
+import {addMessageCreator, updateNewMessageValueCreator} from "../../../../../state/dialog-page-reducer";
 
 const MessageInput = (props) => {
 
