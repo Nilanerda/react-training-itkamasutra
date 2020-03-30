@@ -1,10 +1,10 @@
 import React from "react";
 import styles from './MessageInput.module.scss';
-import {addMessageCreator, updateNewMessageDataCreator} from "../../../../../state";
+import {addMessageCreator, updateNewMessageValueCreator} from "../../../../../state";
 
 const MessageInput = (props) => {
 
-    let newMessageValue = props.dialogPageState.newMessagesData;
+    let newMessageValue = props.dialogPageState.newMessageData;
 
     let onSendMessage = () => {
         props.dispatch(addMessageCreator())
@@ -12,7 +12,7 @@ const MessageInput = (props) => {
 
     let onNewMessageValueChange = (e) => {
         let newMessageValue = e.target.value;
-        props.dispatch(updateNewMessageDataCreator(newMessageValue))
+        props.dispatch(updateNewMessageValueCreator(newMessageValue))
     };
 
     return (

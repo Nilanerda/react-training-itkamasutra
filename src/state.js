@@ -1,7 +1,7 @@
 const ADD_POST = 'ADD_POST';
-const UPDATE_NEW_POST_VALUE = 'UPDATE_NEW_POST_VALUE';
+const SEND_MESSAGE = 'SEND_MESSAGE';
+const UPDATE_NEW_POST_DATA = 'UPDATE_NEW_POST_DATA';
 const UPDATE_NEW_MESSAGE_DATA = 'UPDATE_NEW_MESSAGE_DATA';
-const SEND_MESSAGE_DATA = 'SEND_MESSAGE_DATA';
 
 let store = {
     _state: {
@@ -22,7 +22,7 @@ let store = {
                 {id: 5, name: 'Pavel'},
                 {id: 6, name: 'Anna'},
             ],
-            newMessagesData: ''
+            newMessageData: ''
         },
         profilePage: {
             postsData: [
@@ -39,7 +39,7 @@ let store = {
                     post: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda atque dicta dolore dolorum ex id in necessitatibus numquam pariatur perspiciatis praesentium quae quam rem soluta tempora temporibus vel vero, voluptatum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad adipisci aliquam assumenda consectetur dolorum ipsam omnis, ratione saepe veniam! Assumenda corporis inventore iusto labore magni quam quisquam repellat sint! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet at explicabo harum iste nemo quam quisquam sequi sunt vero! Blanditiis dolorem, est exercitationem magnam minus molestiae nemo temporibus voluptatem?'
                 }
             ],
-            newPostValue: ''
+            newPostData: ''
         }
     },
     _callSubscriber() {
@@ -56,21 +56,21 @@ let store = {
         if (action.type === ADD_POST) {
             let newPostData = {
                 id: 4,
-                post: this._state.profilePage.newPostValue,
+                post: this._state.profilePage.newPostData,
             };
             this._state.profilePage.postsData.push(newPostData);
-            this._state.profilePage.newPostValue = '';
+            this._state.profilePage.newPostData = '';
             this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_POST_VALUE) {
-            this._state.profilePage.newPostValue = action.updatedValue;
+        } else if (action.type === UPDATE_NEW_POST_DATA) {
+            this._state.profilePage.newPostData = action.updatedValue;
+            this._callSubscriber(this._state);
+        } else if (action.type === SEND_MESSAGE) {
+            let newMessageData = this._state.dialogPage.newMessageData;
+            this._state.dialogPage.messagesData.push({id: 7, message: newMessageData});
+            this._state.dialogPage.newMessageData = '';
             this._callSubscriber(this._state);
         } else if (action.type === UPDATE_NEW_MESSAGE_DATA) {
-            this._state.dialogPage.newMessagesData = action.newMessageValue;
-            this._callSubscriber(this._state);
-        } else if (action.type === SEND_MESSAGE_DATA) {
-            let newMessageData = this._state.dialogPage.newMessagesData;
-            this._state.dialogPage.messagesData.push({id: 7, message: newMessageData});
-            this._state.dialogPage.newMessagesData = '';
+            this._state.dialogPage.newMessageData = action.newMessageValue;
             this._callSubscriber(this._state);
         }
     }
@@ -78,14 +78,14 @@ let store = {
 
 export const addPostCreator = () => ({type: ADD_POST});
 
-export const updatePostCreatingValueCreator = (currentPostValue) => ({
-    type: UPDATE_NEW_POST_VALUE,
+export const updatePostValueCreator = (currentPostValue) => ({
+    type: UPDATE_NEW_POST_DATA,
     updatedValue: currentPostValue
 });
 
-export const addMessageCreator = () => ({type: SEND_MESSAGE_DATA});
+export const addMessageCreator = () => ({type: SEND_MESSAGE});
 
-export const updateNewMessageDataCreator = (currentMessageValue) => ({
+export const updateNewMessageValueCreator = (currentMessageValue) => ({
     type: UPDATE_NEW_MESSAGE_DATA,
     newMessageValue: currentMessageValue,
 });

@@ -1,6 +1,6 @@
 import React from "react";
 import './CreatePost.scss';
-import {addPostCreator, updatePostCreatingValueCreator} from "../../../../../../state";
+import {addPostCreator, updatePostValueCreator} from "../../../../../../state";
 
 const CreatePost = (props) => {
     let createPostField = React.createRef();
@@ -11,7 +11,7 @@ const CreatePost = (props) => {
 
     let updatePostCreatingValue = () => {
         let currentPostValue = createPostField.current.value;
-        props.dispatch(updatePostCreatingValueCreator(currentPostValue));
+        props.dispatch(updatePostValueCreator(currentPostValue));
     };
 
     return (
@@ -23,7 +23,7 @@ const CreatePost = (props) => {
                       cols="1"
                       rows="4"
                       placeholder='your news...'
-                      value={props.newPostValue}/>
+                      value={props.newPostData}/>
             <button onClick={addPost}>Send</button>
         </div>
     )
