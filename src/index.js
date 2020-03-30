@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import './index.css';
-import store from "./state";
+import store from "./state/state";
 import App from './App';
 import {BrowserRouter} from "react-router-dom";
 

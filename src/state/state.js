@@ -1,7 +1,5 @@
-const ADD_POST = 'ADD_POST';
-const SEND_MESSAGE = 'SEND_MESSAGE';
-const UPDATE_NEW_POST_DATA = 'UPDATE_NEW_POST_DATA';
-const UPDATE_NEW_MESSAGE_DATA = 'UPDATE_NEW_MESSAGE_DATA';
+import profilePageReducer from "./profile-page-reducer";
+import dialogPageReducer from "./dialog-page-reducer";
 
 let store = {
     _state: {
@@ -53,41 +51,10 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === ADD_POST) {
-            let newPostData = {
-                id: 4,
-                post: this._state.profilePage.newPostData,
-            };
-            this._state.profilePage.postsData.push(newPostData);
-            this._state.profilePage.newPostData = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_POST_DATA) {
-            this._state.profilePage.newPostData = action.updatedValue;
-            this._callSubscriber(this._state);
-        } else if (action.type === SEND_MESSAGE) {
-            let newMessageData = this._state.dialogPage.newMessageData;
-            this._state.dialogPage.messagesData.push({id: 7, message: newMessageData});
-            this._state.dialogPage.newMessageData = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_MESSAGE_DATA) {
-            this._state.dialogPage.newMessageData = action.newMessageValue;
-            this._callSubscriber(this._state);
-        }
+        this._state.profilePage = profilePageReducer(this._state.profilePage, action);
+        this._state.dialogPage = dialogPageReducer(this._state.dialogPage, action);
+        this._callSubscriber(this._state)
     }
 };
-
-export const addPostCreator = () => ({type: ADD_POST});
-
-export const updatePostValueCreator = (currentPostValue) => ({
-    type: UPDATE_NEW_POST_DATA,
-    updatedValue: currentPostValue
-});
-
-export const addMessageCreator = () => ({type: SEND_MESSAGE});
-
-export const updateNewMessageValueCreator = (currentMessageValue) => ({
-    type: UPDATE_NEW_MESSAGE_DATA,
-    newMessageValue: currentMessageValue,
-});
 
 export default store;
