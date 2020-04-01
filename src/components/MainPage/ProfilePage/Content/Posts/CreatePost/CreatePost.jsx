@@ -1,6 +1,6 @@
 import React from "react";
 import './CreatePost.scss';
-import {addPostCreator, updatePostValueCreator} from "../../../../../../state/profile-page-reducer";
+import {addPostCreator, updatePostValueCreator} from "../../../../../../store/profile-page-reducer";
 
 const CreatePost = (props) => {
     let createPostField = React.createRef();
