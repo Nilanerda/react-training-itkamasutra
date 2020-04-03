@@ -3,14 +3,15 @@ import './CreatePost.scss';
 import {addPostCreator, updatePostValueCreator} from "../../../../../../store/profile-page-reducer";
 
 const CreatePost = (props) => {
-    let createPostField = React.createRef();
+
+    let currentPostValue = props.newPostData;
 
     let addPost = () => {
         props.dispatch(addPostCreator());
     };
 
-    let updatePostCreatingValue = () => {
-        let currentPostValue = createPostField.current.value;
+    let updatePostCreatingValue = (e) => {
+        let currentPostValue = e.target.value;
         props.dispatch(updatePostValueCreator(currentPostValue));
     };
 
@@ -19,11 +20,10 @@ const CreatePost = (props) => {
             <p>My posts</p>
             <textarea name="new-post-field"
                       onChange={updatePostCreatingValue}
-                      ref={createPostField}
                       cols="1"
                       rows="4"
                       placeholder='your news...'
-                      value={props.newPostData}/>
+                      value={currentPostValue}/>
             <button onClick={addPost}>Send</button>
         </div>
     )

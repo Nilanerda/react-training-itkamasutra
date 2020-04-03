@@ -7,9 +7,9 @@ const Content = (props) => {
     return (
         <div className="main-info-wrapper">
             <UserInfo/>
-            <Posts profilePageState={props.profilePageState.postsData}
+            <Posts profilePageState={props.profilePageState}
                    dispatch={props.dispatch}
-                   newPostValue={props.profilePageState.newPostValue}/>
+                   />
         </div>
 
     )
