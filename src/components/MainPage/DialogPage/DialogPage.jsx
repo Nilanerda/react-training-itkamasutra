@@ -6,8 +6,8 @@ import ChatField from "./ChatField/ChatField";
 const DialogPage = (props) => {
     return (
         <div className={styles.innerContainer}>
-            <RecipientListField dialogPageState={props.dialogPageState}/>
-            <ChatField dialogPageState={props.dialogPageState} dispatch={props.dispatch}/>
+            <RecipientListField store={props.store}/>
+            <ChatField store={props.store}/>
         </div>
     )
 };

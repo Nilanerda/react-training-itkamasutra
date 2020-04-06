@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "./ChatField.module.scss";
-import CurrentRecipientChat from "./CurrentRecipientChat/CurrentRecipientChat";
-import MessageInput from "./MessageInput/MessageInput";
+import CurrentRecipientChatContainer from "./CurrentRecipientChat/CurrentRecipientChatContainer";
+import MessageInputContainer from "./MessageInput/MessageInputContainer";
 
 const ChatField = (props) => {
     return (
         <div className={styles.chatField}>
-            <CurrentRecipientChat currentDialogState={props.dialogPageState.messagesData}/>
-            <MessageInput dialogPageState={props.dialogPageState} dispatch={props.dispatch}/>
+            <CurrentRecipientChatContainer store={props.store}/>
+            <MessageInputContainer store={props.store}/>
         </div>
     )
 };

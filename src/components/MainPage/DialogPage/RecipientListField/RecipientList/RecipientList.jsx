@@ -4,7 +4,7 @@ import RecipientInstance from "./RecipientInstance/RecipientInstance";
 
 const RecipientList = (props) => {
 
-    let recipientRenderData = props.recipientDataState.map((recipient) => {
+    let recipientRenderData = props.recipientData.map((recipient) => {
         return (<RecipientInstance name={recipient.name} id={recipient.id}/>)
     });
 
