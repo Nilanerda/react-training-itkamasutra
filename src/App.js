@@ -14,8 +14,8 @@ function App(props) {
             <main className="app-main">
                 <Route path='/profile'
                        render={() => <ProfilePage
-                           profilePageState={props.state.profilePage}
-                           dispatch={props.dispatch}/>}/>
+                           store={props.store}
+                           />}/>
                 <Route path='/messages'
                        render={() => <DialogPage
                            dialogPageState={props.state.dialogPage}
