@@ -1,12 +1,18 @@
 import React from "react";
 import CurrentRecipientChat from "./CurrentRecipientChat";
+import StoreContext from "../../../../../store/store-context";
 
-const CurrentRecipientChatContainer = (props) => {
-
-    let state = props.store.getState();
+const CurrentRecipientChatContainer = () => {
 
     return (
-        <CurrentRecipientChat messagesData={state.dialogPage.messagesData}/>
+        <StoreContext.Consumer>
+            {(store) => {
+                return (
+                    <CurrentRecipientChat messagesData={store.getState().dialogPage.messagesData}/>
+                )
+            }
+            }
+        </StoreContext.Consumer>
     )
 };
 

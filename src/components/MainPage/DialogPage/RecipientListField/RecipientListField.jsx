@@ -3,11 +3,11 @@ import styles from "./RecipientListField.module.scss";
 import RecipientSearchField from "./RecipientSearchField/RecipientSearchField";
 import RecipientListContainer from "./RecipientList/RecipientListContainer";
 
-const RecipientListField = (props) => {
+const RecipientListField = () => {
     return (
         <div className={styles.recipientListField}>
             <RecipientSearchField/>
-            <RecipientListContainer store={props.store}/>
+            <RecipientListContainer />
         </div>
     )
 };

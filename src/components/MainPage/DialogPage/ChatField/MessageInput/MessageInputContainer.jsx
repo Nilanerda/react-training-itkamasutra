@@ -1,25 +1,32 @@
 import React from "react";
 import MessageInput from "./MessageInput";
 import {addMessageCreator, updateNewMessageValueCreator} from "../../../../../store/dialog-page-reducer";
+import StoreContext from "../../../../../store/store-context";
 
-const MessageInputContainer = (props) => {
-
-    let state = props.store.getState();
-
-    let onSendMessage = () => {
-        props.store.dispatch(addMessageCreator())
-    };
-
-    let onNewMessageValueChange = (newMessageValue) => {
-        props.store.dispatch(updateNewMessageValueCreator(newMessageValue))
-    };
+const MessageInputContainer = () => {
 
     return (
-        <MessageInput
-            sendMessage={onSendMessage}
-            newMessageValueChange={onNewMessageValueChange}
-            newMessageData={state.dialogPage.newMessageData}
-        />
+        <StoreContext.Consumer>
+            {(store) => {
+
+                let onSendMessage = () => {
+                    store.dispatch(addMessageCreator())
+                };
+
+                let onNewMessageValueChange = (newMessageValue) => {
+                    store.dispatch(updateNewMessageValueCreator(newMessageValue))
+                };
+
+                return (
+                    <MessageInput
+                        sendMessage={onSendMessage}
+                        newMessageValueChange={onNewMessageValueChange}
+                        newMessageData={store.getState().dialogPage.newMessageData}
+                    />
+                )
+            }
+            }
+        </StoreContext.Consumer>
     )
 };
 

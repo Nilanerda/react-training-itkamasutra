@@ -1,13 +1,19 @@
 import React from "react";
 import RecipientInstance from "./RecipientInstance/RecipientInstance";
 import RecipientList from "./RecipientList";
+import StoreContext from "../../../../../store/store-context";
 
 const RecipientListContainer = (props) => {
 
-    let state = props.store.getState();
-
     return (
-        <RecipientList  recipientData={state.dialogPage.recipientData}/>
+        <StoreContext.Consumer>
+            {(store) => {
+                return (
+                    <RecipientList recipientData={store.getState().dialogPage.recipientData}/>
+                )
+            }
+            }
+        </StoreContext.Consumer>
     )
 };
 
