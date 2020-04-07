@@ -6,20 +6,16 @@ import ProfilePage from "./components/MainPage/ProfilePage/ProfilePage";
 import DialogPage from "./components/MainPage/DialogPage/DialogPage";
 import {Route} from "react-router-dom";
 
-function App(props) {
+function App() {
     return (
         <div className="app-wrapper">
             <Header/>
             <Navigation/>
             <main className="app-main">
                 <Route path='/profile'
-                       render={() => <ProfilePage
-                           store={props.store}
-                       />}/>
+                       render={() => <ProfilePage />}/>
                 <Route path='/messages'
-                       render={() => <DialogPage
-                           store={props.store}
-                       />}/>
+                       render={() => <DialogPage />}/>
             </main>
         </div>
     );
