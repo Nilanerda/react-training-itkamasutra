@@ -3,11 +3,11 @@ import './Content.scss';
 import UserInfo from "./UserInfo/UserInfo";
 import PostsContainer from "./Posts/PostsContainer";
 
-const Content = (props) => {
+const Content = () => {
     return (
         <div className="main-info-wrapper">
             <UserInfo/>
-            <PostsContainer store={props.store}/>
+            <PostsContainer />
         </div>
 
     )
