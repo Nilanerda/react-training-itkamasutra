@@ -5,7 +5,7 @@ import './index.css';
 import store from "./store/redux-store";
 import App from './App';
 import {BrowserRouter} from "react-router-dom";
-import {Provider} from "./store/store-context";
+import {Provider} from "react-redux";
 
  let renderEntireTree = () => {
     ReactDOM.render(

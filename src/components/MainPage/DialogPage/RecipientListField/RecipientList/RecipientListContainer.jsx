@@ -1,20 +1,13 @@
 import React from "react";
-import RecipientInstance from "./RecipientInstance/RecipientInstance";
 import RecipientList from "./RecipientList";
-import StoreContext from "../../../../../store/store-context";
+import {connect} from "react-redux";
 
-const RecipientListContainer = (props) => {
-
-    return (
-        <StoreContext.Consumer>
-            {(store) => {
-                return (
-                    <RecipientList recipientData={store.getState().dialogPage.recipientData}/>
-                )
-            }
-            }
-        </StoreContext.Consumer>
-    )
+const mapStateToProps = (state) => {
+    return {
+        recipientData: state.dialogPage.recipientData
+    }
 };
+
+const RecipientListContainer = connect(mapStateToProps)(RecipientList);
 
 export default RecipientListContainer;

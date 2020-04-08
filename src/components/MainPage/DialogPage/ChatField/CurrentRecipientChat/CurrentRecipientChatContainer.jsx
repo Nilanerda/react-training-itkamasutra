@@ -1,19 +1,13 @@
 import React from "react";
 import CurrentRecipientChat from "./CurrentRecipientChat";
-import StoreContext from "../../../../../store/store-context";
+import {connect} from "react-redux";
 
-const CurrentRecipientChatContainer = () => {
-
-    return (
-        <StoreContext.Consumer>
-            {(store) => {
-                return (
-                    <CurrentRecipientChat messagesData={store.getState().dialogPage.messagesData}/>
-                )
-            }
-            }
-        </StoreContext.Consumer>
-    )
+const mapStateToProps = (state) => {
+    return {
+        messagesData: state.dialogPage.messagesData
+    }
 };
+
+const CurrentRecipientChatContainer = connect(mapStateToProps)(CurrentRecipientChat);
 
 export default CurrentRecipientChatContainer;
