@@ -6,7 +6,7 @@ const CurrentRecipientChat = (props) => {
 
     let messagesRenderData = props.messagesData.map( (messageData) => {
         return (
-            <MessageInstance messageStyleType='sentMessage' message={messageData.message}/>
+            <MessageInstance key={messageData.id} messageStyleType='sentMessage' message={messageData.message}/>
         )
     });
 
