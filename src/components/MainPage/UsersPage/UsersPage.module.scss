@@ -5,15 +5,32 @@
     @media screen and (max-width: $md - 1) {
         height: auto;
     }
-    @media screen and (min-width: $md) and (max-width: $lg) {
+    @media screen and (min-width: $md) and (max-width: $lg - 1) {
         height: calc(100vh - 8.125rem);
-        padding: 1rem 0 0 1.5rem;
+        //padding: 1rem 0 0 1.5rem;
     }
     .usersAreaContainer {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 1rem;
         margin: 0 1rem 2rem 0;
+        @media screen and (max-width: $md - 1) {
+            grid-template-columns: repeat(1, 1fr);
+            margin: 0.5rem 1rem 2rem;
+        }
+        @media screen and (min-width: $md) and (max-width: $lg - 1) {
+            grid-template-columns: repeat(2, 1fr);
+            margin: 0.5rem 1rem 2rem;
+        }
+        @media screen and (min-width: $lg) and (max-width: $xl - 1) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media screen and (min-width: $xl) and (max-width: $xxl - 1) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        @media screen and (min-width: $xxl) {
+            grid-template-columns: repeat(5, 1fr);
+        }
         .userInstance {
             position: relative;
             display: flex;
