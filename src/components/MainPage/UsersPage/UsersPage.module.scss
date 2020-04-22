@@ -12,7 +12,7 @@
     .usersAreaContainer {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-gap: 2rem;
+        grid-gap: 1rem;
         margin: 0 1rem 2rem 0;
         .userInstance {
             position: relative;
@@ -53,19 +53,28 @@
                     -webkit-box-orient: vertical;
                 }
             }
-            .userInstanceFollowButton {
+            .userInstanceButton {
                 position: absolute;
                 bottom: -30px;
                 button {
                     font-size: 1.5rem;
                     padding: 1rem;
-                    color: white;
-                    background-color: #81e764;
                     cursor: pointer;
                     border: none;
-                    border-radius: 0 25px 0 25px;
+                    border-radius: 0 25px;
+                    color: white;
+                    outline: none;
+                }
+                .followButton {
+                    background-color: #81e764;
                     &:hover {
                         background-color: #6acd53;
+                    }
+                }
+                .unfollowButton {
+                    background-color: #2e4246;
+                    &:hover {
+                        background-color: #253438;
                     }
                 }
             }
