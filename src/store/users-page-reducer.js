@@ -4,12 +4,48 @@ const SET_USERS = 'SET_USERS';
 
 let initialState = {
     usersData: [
-        // {id: 1, fullName: 'Vasya', followStatus: false, profileStatus: 'lorem1', location: {country: 'Ukraine', city: 'Kyiv'}},
-        // {id: 2, fullName: 'Petro', followStatus: false, profileStatus: 'lorem2', location: {country: 'Belarus', city: 'Minsk'}},
-        // {id: 3, fullName: 'Svetlana', followStatus: true, profileStatus: 'lorem3', location: {country: 'Hungary', city: 'Budapest'}},
-        // {id: 4, fullName: 'Dmytro', followStatus: false, profileStatus: 'lorem4', location: {country: 'Japan', city: 'Tokyo'}},
-        // {id: 5, fullName: 'Pavel', followStatus: true,profileStatus: 'lorem5', location: {country: 'China', city: 'Shanghai'}},
-        // {id: 6, fullName: 'Anna', followStatus: true, profileStatus: 'lorem6', location: {country: 'USA', city: 'Chicago'}},
+        {
+            id: 1,
+            fullName: 'Vasya',
+            followStatus: false,
+            profileStatus: 'lorem1',
+            location: {country: 'Ukraine', city: 'Kyiv'}
+        },
+        {
+            id: 2,
+            fullName: 'Petro',
+            followStatus: false,
+            profileStatus: 'lorem2',
+            location: {country: 'Belarus', city: 'Minsk'}
+        },
+        {
+            id: 3,
+            fullName: 'Svetlana',
+            followStatus: true,
+            profileStatus: 'lorem3',
+            location: {country: 'Hungary', city: 'Budapest'}
+        },
+        {
+            id: 4,
+            fullName: 'Dmytro',
+            followStatus: false,
+            profileStatus: 'lorem4',
+            location: {country: 'Japan', city: 'Tokyo'}
+        },
+        {
+            id: 5,
+            fullName: 'Pavel',
+            followStatus: true,
+            profileStatus: 'lorem5',
+            location: {country: 'China', city: 'Shanghai'}
+        },
+        {
+            id: 6,
+            fullName: 'Anna',
+            followStatus: true,
+            profileStatus: 'lorem6',
+            location: {country: 'USA', city: 'Chicago'}
+        },
     ],
 };
 
@@ -21,7 +57,7 @@ const usersPageReducer = (state = initialState, action) => {
         case FOLLOW_USER:
             return {
                 ...state,
-                usersData: state.usersData.map( users => {
+                usersData: state.usersData.map(users => {
                     if (users.id === action.userId) {
                         return {...users, followStatus: true}
                     }
@@ -31,7 +67,7 @@ const usersPageReducer = (state = initialState, action) => {
         case UNFOLLOW_FROM_USER:
             return {
                 ...state,
-                usersData: state.usersData.map( users => {
+                usersData: state.usersData.map(users => {
                     if (users.id === action.userId) {
                         return {...users, followStatus: false}
                     }
