@@ -34,14 +34,15 @@
         margin-bottom: 30px;
 
         .userInstanceAvatar {
-            background-image: url('https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2019/04/1556504110pug.jpg');
-            width: 5rem;
-            height: 5rem;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            border-radius: 50%;
             margin: 1rem;
+            img {
+                width: 5rem;
+                height: 5rem;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                border-radius: 50%;
+            }
         }
 
         .userInstanceInfo {
