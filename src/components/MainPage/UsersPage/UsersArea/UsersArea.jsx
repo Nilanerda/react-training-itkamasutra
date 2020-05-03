@@ -5,16 +5,19 @@ import userDefaultImage from "../../../../assets/images/pug.jpg";
 
 const UsersArea = (props) => {
 
-    if (props.usersData.length === 0) {
-        axios
-            .get("https://social-network.samuraijs.com/api/1.0/users")
-            .then(response => {
-                props.setUsers(response.data.items)
-            })
+    let initializeUsers = () => {
+        if (props.usersData.length === 0) {
+            axios
+                .get("https://social-network.samuraijs.com/api/1.0/users")
+                .then(response => {
+                    props.setUsers(response.data.items)
+                })
+        }
     }
 
     return (
         <div className={styles.usersAreaContainer}>
+            <button onClick={initializeUsers}>Get users</button>
             {
                 props.usersData.map(user =>
                     <div className={styles.userInstance} key={user.id}>
