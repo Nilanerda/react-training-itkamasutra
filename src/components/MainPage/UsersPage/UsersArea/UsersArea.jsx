@@ -5,8 +5,7 @@ import userDefaultImage from "../../../../assets/images/pug.jpg";
 
 class UsersArea extends React.Component {
 
-    constructor(props) {
-        super(props);
+    componentDidMount() {
         axios
             .get("https://social-network.samuraijs.com/api/1.0/users")
             .then(response => {
