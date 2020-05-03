@@ -5,20 +5,18 @@ import userDefaultImage from "../../../../assets/images/pug.jpg";
 
 class UsersArea extends React.Component {
 
-    initializeUsers = () => {
-        if (this.props.usersData.length === 0) {
-            axios
-                .get("https://social-network.samuraijs.com/api/1.0/users")
-                .then(response => {
-                    this.props.setUsers(response.data.items)
-                })
-        }
+    constructor(props) {
+        super(props);
+        axios
+            .get("https://social-network.samuraijs.com/api/1.0/users")
+            .then(response => {
+                this.props.setUsers(response.data.items)
+            })
     }
 
     render() {
         return (
             <div className={styles.usersAreaContainer}>
-                <button onClick={this.initializeUsers}>Get users</button>
                 {
                     this.props.usersData.map(user =>
                         <div className={styles.userInstance} key={user.id}>
