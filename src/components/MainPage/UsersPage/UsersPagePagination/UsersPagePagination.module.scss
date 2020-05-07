@@ -1,0 +1,16 @@
+.paginationArea {
+    .pagesArea {
+        display: flex;
+        flex-wrap: wrap;
+
+        .pageInstance {
+            color: green;
+            padding: 1rem;
+            font-size: 1rem;
+        }
+
+        .pageInstanceSelected {
+            color: red;
+        }
+    }
+}
