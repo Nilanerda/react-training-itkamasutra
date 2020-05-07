@@ -1,10 +1,32 @@
 import React from "react";
-import UsersPagePagination from "./UsersPagePagination";
 import {connect} from "react-redux";
 import {
     setUsersActionCreator,
     setCurrentPageCreator,
 } from "../../../../store/users-page-reducer";
+import * as axios from "axios";
+import UsersPagePagination from "./UsersPagePagination";
+
+class UsersPagePaginationContainer extends React.Component {
+
+    onPageNumberChange = (pageNumber) => {
+        this.props.setCurrentPage(pageNumber);
+        axios
+            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.shownUsers}`)
+            .then(response => {
+                this.props.setUsers(response.data.items)
+            })
+    }
+
+    render() {
+        return <UsersPagePagination
+            totalIncomeUsersCount={this.props.totalIncomeUsersCount}
+            shownUsers={this.props.shownUsers}
+            currentPage={this.props.currentPage}
+            onPageNumberChange={this.onPageNumberChange}
+        />
+    }
+}
 
 let mapStateToProps = (state) => {
     return {
@@ -25,6 +47,4 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-const UsersAreaContainer = connect(mapStateToProps, mapDispatchToProps)(UsersPagePagination);
-
-export default UsersAreaContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(UsersPagePaginationContainer);
