@@ -1,10 +1,12 @@
 import React from "react";
 import styles from './UsersArea.module.scss';
 import userDefaultImage from "../../../../assets/images/pug.jpg";
+import Preloader from "../../../common/Preloader/Preloader";
 
 const UsersArea = (props) => {
     return (
         <div className={styles.usersAreaContainer}>
+            {props.isFetching ? <Preloader/> : null}
             {
                 props.usersData.map(user =>
                     <div className={styles.userInstance} key={user.id}>

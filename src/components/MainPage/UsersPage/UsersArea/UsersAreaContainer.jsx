@@ -3,7 +3,8 @@ import {connect} from "react-redux";
 import {
     toggleFollowActionCreator,
     setUsersActionCreator,
-    setTotalUsersCountCreator
+    setTotalUsersCountCreator,
+    preloaderToggleAC
 } from "../../../../store/users-page-reducer";
 import * as axios from "axios";
 import UsersArea from "./UsersArea";
@@ -11,19 +12,26 @@ import UsersArea from "./UsersArea";
 class UsersAreaContainer extends React.Component {
 
     componentDidMount() {
+        this.props.preloaderToggle(true)
         axios
             .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.shownUsers}`)
             .then(response => {
+                this.props.preloaderToggle(false)
                 this.props.setUsers(response.data.items)
                 this.props.setTotalUsersCount(response.data.totalCount)
             })
     }
 
     render() {
-        return <UsersArea
-            usersData={this.props.usersData}
-            toogleFollowAction={this.props.toogleFollowAction}
-        />
+        return (
+            <>
+                <UsersArea
+                    usersData={this.props.usersData}
+                    toogleFollowAction={this.props.toogleFollowAction}
+                    isFetching={this.props.isFetching}
+                />
+            </>
+        )
     }
 }
 
@@ -32,6 +40,7 @@ let mapStateToProps = (state) => {
         usersData: state.usersPage.usersData,
         shownUsers: state.usersPage.shownUsers,
         currentPage: state.usersPage.currentPage,
+        isFetching: state.usersPage.isFetching,
     }
 }
 
@@ -45,6 +54,9 @@ let mapDispatchToProps = (dispatch) => {
         },
         setTotalUsersCount: (totalUsersCount) => {
             dispatch(setTotalUsersCountCreator(totalUsersCount))
+        },
+        preloaderToggle: (isFetching) => {
+            dispatch(preloaderToggleAC(isFetching))
         }
     }
 }
