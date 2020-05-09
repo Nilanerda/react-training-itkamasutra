@@ -3,13 +3,15 @@ const SET_USERS = 'SET_USERS';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
 const PRELOADER_TOGGLE = 'PRELOADER_TOGGLE';
+const PAGINATION_INIT = 'PAGINATION_INIT';
 
 let initialState = {
     usersData: [],
     shownUsers: 8,
     totalIncomeUsersCount: 0,
     currentPage: 1,
-    isFetching: true
+    isFetching: true,
+    paginationInit: false,
 };
 
 const usersPageReducer = (state = initialState, action) => {
@@ -44,6 +46,11 @@ const usersPageReducer = (state = initialState, action) => {
                 ...state,
                 isFetching: action.isFetching
             }
+        case PAGINATION_INIT:
+            return {
+                ...state,
+                paginationInit: action.pagInit
+            }
         default:
             return state;
     }
@@ -58,5 +65,7 @@ export const setCurrentPageCreator = (currentPage) => ({type: SET_CURRENT_PAGE, 
 export const setTotalUsersCountCreator = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, totalUsersCount})
 
 export const preloaderToggleAC = (isFetching) => ({type: PRELOADER_TOGGLE, isFetching})
+
+export const pagInitAC = (pagInit) => ({type: PAGINATION_INIT, pagInit})
 
 export default usersPageReducer;
