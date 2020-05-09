@@ -1,29 +1,21 @@
 import React from "react";
 import styles from './UsersPagePagination.module.scss';
+import Pagination from "react-js-pagination";
 
 const UsersPagePagination = (props) => {
 
-    let pagesCount = Math.ceil(props.totalIncomeUsersCount / props.shownUsers);
-    let pages = [];
-    for (let i = 1; i <= pagesCount; i++) {
-        pages.push(i);
-    }
-
     return (
         <div className={styles.paginationArea}>
-            <ul className={styles.pagesArea}>
-                {pages.map(page => {
-                    return (
-                        <li>
-                            <button
-                                onClick={() => {
-                                    props.onPageNumberChange(page)
-                                }}
-                                className={`${styles.pageInstance} ${props.currentPage === page && styles.pageInstanceSelected}`}>{page}</button>
-                        </li>
-                    )
-                })}
-            </ul>
+            {props.paginationInit ? <Pagination
+                totalItemsCount={props.totalIncomeUsersCount}
+                onChange={props.onPageNumberChange}
+                activePage={props.currentPage}
+                innerClass={styles.pagesArea}
+                activeLinkClass={styles.pageSelectedLink}
+                itemClass={styles.pageInstanceArea}
+                linkClass={styles.pageLink}
+                activeClass={styles.pageInstanceAreaSelected}
+            /> : null}
         </div>
     )
 }

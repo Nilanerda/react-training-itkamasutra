@@ -1,17 +1,32 @@
 .paginationArea {
-    display: flex;
+    margin-right: 1rem;
+    padding-bottom: 2rem;
+
     .pagesArea {
         display: flex;
-        flex-wrap: wrap;
+        justify-content: center;
 
-        .pageInstance {
-            color: green;
-            padding: 1rem;
-            font-size: 1rem;
+        .pageInstanceArea {
+            background-color: #ececec;
+            margin: 0.5rem;
+
+            .pageLink {
+                text-decoration: none;
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+                font-weight: bold;
+                display: block;
+                color: #2e4246;
+            }
+
+            .pageSelectedLink {
+                color: #ffffff;
+            }
         }
 
-        .pageInstanceSelected {
-            color: red;
+        .pageInstanceAreaSelected {
+            background-color: #81e764;
+            border-radius: 0 25px;
         }
     }
 }

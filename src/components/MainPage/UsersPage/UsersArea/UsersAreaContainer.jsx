@@ -4,7 +4,7 @@ import {
     toggleFollowActionCreator,
     setUsersActionCreator,
     setTotalUsersCountCreator,
-    preloaderToggleAC
+    preloaderToggleAC, pagInitAC
 } from "../../../../store/users-page-reducer";
 import * as axios from "axios";
 import UsersArea from "./UsersArea";
@@ -19,6 +19,7 @@ class UsersAreaContainer extends React.Component {
                 this.props.preloaderToggle(false)
                 this.props.setUsers(response.data.items)
                 this.props.setTotalUsersCount(response.data.totalCount)
+                this.props.paginationInitialization(true)
             })
     }
 
@@ -57,6 +58,9 @@ let mapDispatchToProps = (dispatch) => {
         },
         preloaderToggle: (isFetching) => {
             dispatch(preloaderToggleAC(isFetching))
+        },
+        paginationInitialization: (pagInit) => {
+            dispatch(pagInitAC((pagInit)))
         }
     }
 }

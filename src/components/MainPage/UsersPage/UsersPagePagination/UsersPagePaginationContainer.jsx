@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {
     setUsersActionCreator,
     setCurrentPageCreator,
-    preloaderToggleAC,
+    preloaderToggleAC, pagInitAC,
 } from "../../../../store/users-page-reducer";
 import * as axios from "axios";
 import UsersPagePagination from "./UsersPagePagination";
@@ -27,6 +27,7 @@ class UsersPagePaginationContainer extends React.Component {
             shownUsers={this.props.shownUsers}
             currentPage={this.props.currentPage}
             onPageNumberChange={this.onPageNumberChange}
+            paginationInit={this.props.paginationInit}
         />
     }
 }
@@ -36,7 +37,8 @@ let mapStateToProps = (state) => {
         shownUsers: state.usersPage.shownUsers,
         totalIncomeUsersCount: state.usersPage.totalIncomeUsersCount,
         currentPage: state.usersPage.currentPage,
-        isFetching: state.usersPage.isFetching
+        isFetching: state.usersPage.isFetching,
+        paginationInit: state.usersPage.paginationInit
     }
 }
 
