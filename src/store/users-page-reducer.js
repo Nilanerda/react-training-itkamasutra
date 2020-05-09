@@ -2,12 +2,14 @@ const TOGGLE_FOLLOW_ACTION = 'TOGGLE_FOLLOW_ACTION';
 const SET_USERS = 'SET_USERS';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
+const PRELOADER_TOGGLE = 'PRELOADER_TOGGLE';
 
 let initialState = {
     usersData: [],
-    shownUsers: 10,
+    shownUsers: 8,
     totalIncomeUsersCount: 0,
     currentPage: 1,
+    isFetching: true
 };
 
 const usersPageReducer = (state = initialState, action) => {
@@ -37,6 +39,11 @@ const usersPageReducer = (state = initialState, action) => {
                 ...state,
                 totalIncomeUsersCount: action.totalUsersCount
             }
+        case PRELOADER_TOGGLE:
+            return {
+                ...state,
+                isFetching: action.isFetching
+            }
         default:
             return state;
     }
@@ -49,5 +56,7 @@ export const setUsersActionCreator = (users) => ({type: SET_USERS, users});
 export const setCurrentPageCreator = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
 
 export const setTotalUsersCountCreator = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, totalUsersCount})
+
+export const preloaderToggleAC = (isFetching) => ({type: PRELOADER_TOGGLE, isFetching})
 
 export default usersPageReducer;
