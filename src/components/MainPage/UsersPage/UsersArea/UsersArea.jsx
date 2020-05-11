@@ -2,6 +2,7 @@ import React from "react";
 import styles from './UsersArea.module.scss';
 import userDefaultImage from "../../../../assets/images/pug.jpg";
 import Preloader from "../../../common/Preloader/Preloader";
+import {NavLink} from "react-router-dom";
 
 const UsersArea = (props) => {
     return (
@@ -17,7 +18,7 @@ const UsersArea = (props) => {
                         <div className={styles.userInstanceInfo}>
                             <ul>
                                 <li className={styles.userInstanceInfoName}>
-                                    <a href="">{user.name}</a>
+                                    <NavLink to={'/profile/' + user.id}>{user.name}</NavLink>
                                 </li>
                                 <li>{"user.location.city"}, {"user.location.country"}</li>
                                 <li className={styles.userInstanceInfoStatus}>{user.status}</li>
