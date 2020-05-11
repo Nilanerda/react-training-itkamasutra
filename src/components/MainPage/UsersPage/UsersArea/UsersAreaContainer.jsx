@@ -29,7 +29,7 @@ class UsersAreaContainer extends React.Component {
             <>
                 <UsersArea
                     usersData={this.props.usersData}
-                    toogleFollowAction={this.props.toogleFollowAction}
+                    toogleFollowAction={this.props.toggleFollowAction}
                     isFetching={this.props.isFetching}
                 />
             </>
