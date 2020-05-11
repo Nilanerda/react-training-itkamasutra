@@ -1,6 +1,6 @@
 import React from "react";
 import MessageInput from "./MessageInput";
-import {addMessageCreator, updateNewMessageValueCreator} from "../../../../../store/dialog-page-reducer";
+import {sendMessage, updateNewMessageData} from "../../../../../store/dialog-page-reducer";
 import {connect} from "react-redux";
 
 const mapStateToProps = (state) => {
@@ -9,17 +9,6 @@ const mapStateToProps = (state) => {
     }
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        newMessageValueChange: (newMessageValue) => {
-            dispatch(updateNewMessageValueCreator(newMessageValue));
-        },
-        sendMessage: () => {
-            dispatch(addMessageCreator());
-        }
-    }
-};
-
-const MessageInputContainer = connect(mapStateToProps, mapDispatchToProps)(MessageInput);
+const MessageInputContainer = connect(mapStateToProps, {sendMessage, updateNewMessageData})(MessageInput);
 
 export default MessageInputContainer;

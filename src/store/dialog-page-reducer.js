@@ -40,9 +40,9 @@ const dialogPageReducer = (state = initialState, action) => {
     }
 };
 
-export const addMessageCreator = () => ({type: SEND_MESSAGE});
+export const sendMessage = () => ({type: SEND_MESSAGE});
 
-export const updateNewMessageValueCreator = (currentMessageValue) => ({
+export const updateNewMessageData = (currentMessageValue) => ({
     type: UPDATE_NEW_MESSAGE_DATA,
     newMessageValue: currentMessageValue,
 });

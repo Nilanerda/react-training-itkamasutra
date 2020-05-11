@@ -11,7 +11,7 @@ const MessageInput = (props) => {
 
     let onNewMessageValueChange = (e) => {
         let newMessageValue = e.target.value;
-        props.newMessageValueChange(newMessageValue);
+        props.updateNewMessageData(newMessageValue);
     };
 
     return (
