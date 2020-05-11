@@ -56,16 +56,16 @@ const usersPageReducer = (state = initialState, action) => {
     }
 };
 
-export const toggleFollowActionCreator = (userId) => ({type: TOGGLE_FOLLOW_ACTION, userId});
+export const toggleFollowAction = (userId) => ({type: TOGGLE_FOLLOW_ACTION, userId});
 
-export const setUsersActionCreator = (users) => ({type: SET_USERS, users});
+export const setUsers = (users) => ({type: SET_USERS, users});
 
-export const setCurrentPageCreator = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
+export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
 
-export const setTotalUsersCountCreator = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, totalUsersCount})
+export const setTotalUsersCount = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, totalUsersCount})
 
-export const preloaderToggleAC = (isFetching) => ({type: PRELOADER_TOGGLE, isFetching})
+export const preloaderToggle = (isFetching) => ({type: PRELOADER_TOGGLE, isFetching})
 
-export const pagInitAC = (pagInit) => ({type: PAGINATION_INIT, pagInit})
+export const paginationInit = (pagInit) => ({type: PAGINATION_INIT, pagInit})
 
 export default usersPageReducer;

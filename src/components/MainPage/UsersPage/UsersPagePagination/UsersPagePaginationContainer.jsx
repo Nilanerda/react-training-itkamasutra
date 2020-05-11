@@ -1,9 +1,9 @@
 import React from "react";
 import {connect} from "react-redux";
 import {
-    setUsersActionCreator,
-    setCurrentPageCreator,
-    preloaderToggleAC, pagInitAC,
+    setUsers,
+    setCurrentPage,
+    preloaderToggle,
 } from "../../../../store/users-page-reducer";
 import * as axios from "axios";
 import UsersPagePagination from "./UsersPagePagination";
@@ -42,18 +42,4 @@ let mapStateToProps = (state) => {
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        setUsers: (users) => {
-            dispatch(setUsersActionCreator(users))
-        },
-        setCurrentPage: (page) => {
-            dispatch(setCurrentPageCreator(page))
-        },
-        preloaderToggle: (isFetching) => {
-            dispatch(preloaderToggleAC(isFetching))
-        }
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(UsersPagePaginationContainer);
+export default connect(mapStateToProps, {setUsers, setCurrentPage, preloaderToggle})(UsersPagePaginationContainer);

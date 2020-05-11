@@ -1,10 +1,11 @@
 import React from "react";
 import {connect} from "react-redux";
 import {
-    toggleFollowActionCreator,
-    setUsersActionCreator,
-    setTotalUsersCountCreator,
-    preloaderToggleAC, pagInitAC
+    toggleFollowAction,
+    setUsers,
+    setTotalUsersCount,
+    preloaderToggle,
+    paginationInit
 } from "../../../../store/users-page-reducer";
 import * as axios from "axios";
 import UsersArea from "./UsersArea";
@@ -19,7 +20,7 @@ class UsersAreaContainer extends React.Component {
                 this.props.preloaderToggle(false)
                 this.props.setUsers(response.data.items)
                 this.props.setTotalUsersCount(response.data.totalCount)
-                this.props.paginationInitialization(true)
+                this.props.paginationInit(true)
             })
     }
 
@@ -45,24 +46,10 @@ let mapStateToProps = (state) => {
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        toogleFollowAction: (userId) => {
-            dispatch(toggleFollowActionCreator(userId))
-        },
-        setUsers: (users) => {
-            dispatch(setUsersActionCreator(users))
-        },
-        setTotalUsersCount: (totalUsersCount) => {
-            dispatch(setTotalUsersCountCreator(totalUsersCount))
-        },
-        preloaderToggle: (isFetching) => {
-            dispatch(preloaderToggleAC(isFetching))
-        },
-        paginationInitialization: (pagInit) => {
-            dispatch(pagInitAC((pagInit)))
-        }
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(UsersAreaContainer);
+export default connect(mapStateToProps, {
+    toggleFollowAction,
+    setUsers,
+    setTotalUsersCount,
+    preloaderToggle,
+    paginationInit
+})(UsersAreaContainer);
