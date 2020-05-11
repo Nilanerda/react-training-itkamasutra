@@ -3,12 +3,14 @@
 .main-posts-field {
     display: flex;
     flex-direction: column;
+    margin-top: 3rem;
+    @media screen and (max-width: $lg){
+        margin-top: 2rem;
+    }
     @media screen and (min-width: $lg + 1){
         width: 80%;
         align-self: center;
-        margin-top: 3rem;
-    }
-    @media screen and (max-width: $lg){
-        margin: 0;
+        position: relative;
+        top: -7rem;
     }
 }

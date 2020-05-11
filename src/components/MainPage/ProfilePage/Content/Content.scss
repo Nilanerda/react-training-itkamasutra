@@ -11,8 +11,4 @@
     @media screen and (min-width: $md) and (max-width: $lg){
         padding: 1.5rem 3rem;
     }
-    @media screen and (min-width: $lg + 1){
-        position: relative;
-        top: -7rem;
-    }
 }
