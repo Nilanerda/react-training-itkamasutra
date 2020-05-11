@@ -23,6 +23,8 @@
     margin: 0 auto;
   }
   .app-main {
-    min-height: calc(100vh - 5rem);
+    @media screen and (min-width: $lg) {
+      min-height: calc(100vh - 5rem);
+    }
   }
 }
