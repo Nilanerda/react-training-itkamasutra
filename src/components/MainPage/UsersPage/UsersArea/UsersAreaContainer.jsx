@@ -13,7 +13,7 @@ import UsersArea from "./UsersArea";
 class UsersAreaContainer extends React.Component {
 
     componentDidMount() {
-        this.props.preloaderToggle(true)
+        (this.props.usersData === null ? this.props.preloaderToggle(true) : this.props.preloaderToggle(false))
         axios
             .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.shownUsers}`)
             .then(response => {
