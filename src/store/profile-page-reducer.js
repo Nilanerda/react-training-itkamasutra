@@ -38,9 +38,9 @@ const profilePageReducer = (state = initialState, action) => {
     }
 };
 
-export const addPostCreator = () => ({type: ADD_POST});
+export const addPost = () => ({type: ADD_POST});
 
-export const updatePostValueCreator = (currentPostValue) => ({
+export const updateNewPostData = (currentPostValue) => ({
     type: UPDATE_NEW_POST_DATA,
     updatedValue: currentPostValue
 });

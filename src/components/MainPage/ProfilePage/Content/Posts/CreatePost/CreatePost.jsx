@@ -11,7 +11,7 @@ const CreatePost = (props) => {
 
     let onUpdatePostCreatingValue = (e) => {
         let currentPostValue = e.target.value;
-        props.updatePostCreatingValue(currentPostValue);
+        props.updateNewPostData(currentPostValue);
     };
 
     return (
