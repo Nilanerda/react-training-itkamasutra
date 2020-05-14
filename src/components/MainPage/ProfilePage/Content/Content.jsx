@@ -4,12 +4,12 @@ import UserInfo from "./UserInfo/UserInfo";
 import PostsContainer from "./Posts/PostsContainer";
 import Wallpaper from "./Wallpaper/Wallpaper";
 
-const Content = () => {
+const Content = (props) => {
     return (
         <div className="main-info-wrapper">
             <Wallpaper/>
-            <UserInfo/>
-            <PostsContainer />
+            <UserInfo profile={props.profile}/>
+            <PostsContainer/>
         </div>
 
     )

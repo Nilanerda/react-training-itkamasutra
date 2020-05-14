@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "./ProfilePage.module.scss";
 import Content from "./Content/Content";
+import Preloader from "../../common/Preloader/Preloader";
 
-const ProfilePage = () => {
+const ProfilePage = (props) => {
     return (
         <div className={styles.innerContainer}>
-            <Content />
+            {!props.profile ? <Preloader/> : <Content profile={props.profile}/>}
         </div>
     )
 };

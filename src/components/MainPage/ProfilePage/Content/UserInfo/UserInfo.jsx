@@ -1,10 +1,12 @@
 import React from "react";
 import './UserInfo.scss';
 
-const UserInfo = () => {
+const UserInfo = (props) => {
     return (
         <div className="main-profile-info">
-            <div className="profile-avatar"></div>
+            <div className="profile-avatar">
+                <img src={props.profile.photos.large} alt=""/>
+            </div>
             <div className="profile-info">
                 <ul className="profile-info-data">
                     <li>Name</li>
