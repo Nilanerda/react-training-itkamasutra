@@ -13,7 +13,9 @@ import UsersArea from "./UsersArea";
 class UsersAreaContainer extends React.Component {
 
     componentDidMount() {
-        (this.props.usersData === null ? this.props.preloaderToggle(true) : this.props.preloaderToggle(false))
+        (this.props.usersData === null
+            ? this.props.preloaderToggle(true)
+            : this.props.preloaderToggle(false))
         axios
             .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.shownUsers}`)
             .then(response => {
@@ -26,13 +28,11 @@ class UsersAreaContainer extends React.Component {
 
     render() {
         return (
-            <>
-                <UsersArea
-                    usersData={this.props.usersData}
-                    toogleFollowAction={this.props.toggleFollowAction}
-                    isFetching={this.props.isFetching}
-                />
-            </>
+            <UsersArea
+                usersData={this.props.usersData}
+                toogleFollowAction={this.props.toggleFollowAction}
+                isFetching={this.props.isFetching}
+            />
         )
     }
 }
