@@ -13,7 +13,7 @@ function App() {
             <Header/>
             <Navigation/>
             <main className="app-main">
-                <Route path='/profile'
+                <Route path='/profile/:userId?'
                        render={() => <ProfilePageContainer />}/>
                 <Route path='/messages'
                        render={() => <DialogPage />}/>
