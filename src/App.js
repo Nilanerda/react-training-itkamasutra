@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import Header from "./components/MainPage/Header/Header";
+import HeaderContainer from "./components/MainPage/Header/HeaderContainer";
 import Navigation from "./components/MainPage/Navigation/Navigation";
 import ProfilePageContainer from "./components/MainPage/ProfilePage/ProfilePageContainer";
 import DialogPage from "./components/MainPage/DialogPage/DialogPage";
@@ -10,7 +10,7 @@ import {Route} from "react-router-dom";
 function App() {
     return (
         <div className="app-wrapper">
-            <Header/>
+            <HeaderContainer/>
             <Navigation/>
             <main className="app-main">
                 <Route path='/profile/:userId?'
