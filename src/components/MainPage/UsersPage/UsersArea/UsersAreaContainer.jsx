@@ -17,7 +17,9 @@ class UsersAreaContainer extends React.Component {
             ? this.props.preloaderToggle(true)
             : this.props.preloaderToggle(false))
         axios
-            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.shownUsers}`)
+            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.shownUsers}`, {
+                withCredentials: true
+            })
             .then(response => {
                 this.props.preloaderToggle(false)
                 this.props.setUsers(response.data.items)
