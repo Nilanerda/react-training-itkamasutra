@@ -4,6 +4,7 @@ import userDefaultImage from "../../../../assets/images/pug.jpg";
 import Preloader from "../../../common/Preloader/Preloader";
 import {NavLink} from "react-router-dom";
 import * as axios from "axios";
+import {usersAPI} from "../../../../api/api";
 
 const UsersArea = (props) => {
     return (
@@ -21,7 +22,6 @@ const UsersArea = (props) => {
                                 <li className={styles.userInstanceInfoName}>
                                     <NavLink to={'/profile/' + user.id}>{user.name}</NavLink>
                                 </li>
-                                <li>{"user.location.city"}, {"user.location.country"}</li>
                                 <li className={styles.userInstanceInfoStatus}>{user.status}</li>
                             </ul>
                         </div>
@@ -29,27 +29,15 @@ const UsersArea = (props) => {
                             {
                                 user.followStatus
                                     ? <button className={styles.unfollowButton} onClick={() => {
-                                        axios
-                                            .delete(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {
-                                                withCredentials: true,
-                                                headers: {
-                                                    'API-KEY': '61f61afb-d156-4111-9507-73744ab9bc1d'
-                                                }
-                                            })
+                                        usersAPI.unfollowUser(user.id)
                                             .then(response => {
-                                                (response.data.resultCode === 0 ? props.toogleFollowAction(user.id) : console.log('error'))
+                                                (response.resultCode === 0 ? props.toogleFollowAction(user.id) : console.log('error'))
                                             })
                                     }}>Unfollow</button>
                                     : <button className={styles.followButton} onClick={() => {
-                                        axios
-                                            .post(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {}, {
-                                                withCredentials: true,
-                                                headers: {
-                                                    'API-KEY': '61f61afb-d156-4111-9507-73744ab9bc1d'
-                                                }
-                                            })
+                                        usersAPI.followUser(user.id)
                                             .then(response => {
-                                                (response.data.resultCode === 0 ? props.toogleFollowAction(user.id) : console.log('error'))
+                                                (response.resultCode === 0 ? props.toogleFollowAction(user.id) : console.log('error'))
                                             })
                                     }}>Follow</button>
                             }

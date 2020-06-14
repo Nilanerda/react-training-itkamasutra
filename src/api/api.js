@@ -15,5 +15,19 @@ export const usersAPI = {
             .then(response => {
                 return response.data
             })
+    },
+    followUser(userId) {
+        return axiosInstance
+            .post(`follow/${userId}`, {})
+            .then(response => {
+                return response.data
+            })
+    },
+    unfollowUser(userId) {
+        return axiosInstance
+            .delete(`follow/${userId}`, {})
+            .then(response => {
+                return response.data
+            })
     }
 }
