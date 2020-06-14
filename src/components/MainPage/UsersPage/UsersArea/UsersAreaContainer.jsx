@@ -7,8 +7,8 @@ import {
     preloaderToggle,
     paginationInit
 } from "../../../../store/users-page-reducer";
-import * as axios from "axios";
 import UsersArea from "./UsersArea";
+import {usersAPI} from "../../../../api/api";
 
 class UsersAreaContainer extends React.Component {
 
@@ -16,14 +16,11 @@ class UsersAreaContainer extends React.Component {
         (this.props.usersData === null
             ? this.props.preloaderToggle(true)
             : this.props.preloaderToggle(false))
-        axios
-            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.shownUsers}`, {
-                withCredentials: true
-            })
-            .then(response => {
+        usersAPI.getUsers(this.props.currentPage, this.props.shownUsers)
+            .then(data => {
                 this.props.preloaderToggle(false)
-                this.props.setUsers(response.data.items)
-                this.props.setTotalUsersCount(response.data.totalCount)
+                this.props.setUsers(data.items)
+                this.props.setTotalUsersCount(data.totalCount)
                 this.props.paginationInit(true)
             })
     }
