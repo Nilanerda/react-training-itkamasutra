@@ -5,7 +5,8 @@ import {
     setUsers,
     setTotalUsersCount,
     preloaderToggle,
-    paginationInit
+    paginationInit,
+    subscribeInProcessToggle
 } from "../../../../store/users-page-reducer";
 import UsersArea from "./UsersArea";
 import {usersAPI} from "../../../../api/api";
@@ -31,6 +32,8 @@ class UsersAreaContainer extends React.Component {
                 usersData={this.props.usersData}
                 toogleFollowAction={this.props.toggleFollowAction}
                 isFetching={this.props.isFetching}
+                subscribeInProcessToggle={this.props.subscribeInProcessToggle}
+                subscribeInProcess={this.props.subscribeInProcess}
             />
         )
     }
@@ -42,6 +45,7 @@ let mapStateToProps = (state) => {
         shownUsers: state.usersPage.shownUsers,
         currentPage: state.usersPage.currentPage,
         isFetching: state.usersPage.isFetching,
+        subscribeInProcess: state.usersPage.subscribeInProcess
     }
 }
 
@@ -50,5 +54,6 @@ export default connect(mapStateToProps, {
     setUsers,
     setTotalUsersCount,
     preloaderToggle,
-    paginationInit
+    paginationInit,
+    subscribeInProcessToggle
 })(UsersAreaContainer);

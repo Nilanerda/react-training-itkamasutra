@@ -3,7 +3,6 @@ import styles from './UsersArea.module.scss';
 import userDefaultImage from "../../../../assets/images/pug.jpg";
 import Preloader from "../../../common/Preloader/Preloader";
 import {NavLink} from "react-router-dom";
-import * as axios from "axios";
 import {usersAPI} from "../../../../api/api";
 
 const UsersArea = (props) => {
@@ -28,16 +27,20 @@ const UsersArea = (props) => {
                         <div className={styles.userInstanceButton}>
                             {
                                 user.followStatus
-                                    ? <button className={styles.unfollowButton} onClick={() => {
+                                    ? <button disabled={props.subscribeInProcess.some(userId => userId === user.id)} className={styles.unfollowButton} onClick={() => {
+                                        props.subscribeInProcessToggle(true, user.id)
                                         usersAPI.unfollowUser(user.id)
                                             .then(response => {
                                                 (response.resultCode === 0 ? props.toogleFollowAction(user.id) : console.log('error'))
+                                                props.subscribeInProcessToggle(false, user.id)
                                             })
                                     }}>Unfollow</button>
-                                    : <button className={styles.followButton} onClick={() => {
+                                    : <button disabled={props.subscribeInProcess.some(userId => userId === user.id)} className={styles.followButton} onClick={() => {
+                                        props.subscribeInProcessToggle(true, user.id)
                                         usersAPI.followUser(user.id)
                                             .then(response => {
                                                 (response.resultCode === 0 ? props.toogleFollowAction(user.id) : console.log('error'))
+                                                props.subscribeInProcessToggle(false, user.id)
                                             })
                                     }}>Follow</button>
                             }
