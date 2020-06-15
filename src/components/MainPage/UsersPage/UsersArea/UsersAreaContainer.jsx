@@ -14,9 +14,6 @@ import {usersAPI} from "../../../../api/api";
 class UsersAreaContainer extends React.Component {
 
     componentDidMount() {
-        (this.props.usersData === null
-            ? this.props.preloaderToggle(true)
-            : this.props.preloaderToggle(false))
         usersAPI.getUsers(this.props.currentPage, this.props.shownUsers)
             .then(data => {
                 this.props.setUsers(data.items)
