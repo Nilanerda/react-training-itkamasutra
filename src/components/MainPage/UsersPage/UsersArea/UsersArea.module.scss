@@ -94,6 +94,11 @@
                 &:hover {
                     background-color: #6acd53;
                 }
+
+                &:disabled {
+                    background-color: #6acd53;
+                    color: #253438;
+                }
             }
 
             .unfollowButton {
@@ -101,6 +106,11 @@
 
                 &:hover {
                     background-color: #253438;
+                }
+
+                &:disabled {
+                    background-color: #253438;
+                    color: #6acd53;
                 }
             }
         }
