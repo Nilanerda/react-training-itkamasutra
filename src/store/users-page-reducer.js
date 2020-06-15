@@ -4,6 +4,7 @@ const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
 const PRELOADER_TOGGLE = 'PRELOADER_TOGGLE';
 const PAGINATION_INIT = 'PAGINATION_INIT';
+const SUBSCRIBE_IN_PROCESS_TOGGLE = 'SUBSCRIBE_IN_PROCESS_TOGGLE';
 
 let initialState = {
     usersData: [],
@@ -12,6 +13,7 @@ let initialState = {
     currentPage: 1,
     isFetching: true,
     paginationInit: false,
+    subscribeInProcess: [],
 };
 
 const usersPageReducer = (state = initialState, action) => {
@@ -51,6 +53,13 @@ const usersPageReducer = (state = initialState, action) => {
                 ...state,
                 paginationInit: action.pagInit
             }
+        case SUBSCRIBE_IN_PROCESS_TOGGLE:
+            return {
+                ...state,
+                subscribeInProcess: action.isFetching
+                ? [...state.subscribeInProcess, action.userId]
+                : state.subscribeInProcess.filter(userId => userId !== action.userId)
+            }
         default:
             return state;
     }
@@ -67,5 +76,7 @@ export const setTotalUsersCount = (totalUsersCount) => ({type: SET_TOTAL_USERS_C
 export const preloaderToggle = (isFetching) => ({type: PRELOADER_TOGGLE, isFetching})
 
 export const paginationInit = (pagInit) => ({type: PAGINATION_INIT, pagInit})
+
+export const subscribeInProcessToggle = (isFetching, userId) => ({type: SUBSCRIBE_IN_PROCESS_TOGGLE, isFetching, userId})
 
 export default usersPageReducer;
