@@ -19,10 +19,10 @@ class UsersAreaContainer extends React.Component {
             : this.props.preloaderToggle(false))
         usersAPI.getUsers(this.props.currentPage, this.props.shownUsers)
             .then(data => {
-                this.props.preloaderToggle(false)
                 this.props.setUsers(data.items)
                 this.props.setTotalUsersCount(data.totalCount)
                 this.props.paginationInit(true)
+                this.props.preloaderToggle(false)
             })
     }
 
@@ -50,10 +50,10 @@ let mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, {
-    toggleFollowAction,
     setUsers,
     setTotalUsersCount,
     preloaderToggle,
     paginationInit,
+    toggleFollowAction,
     subscribeInProcessToggle
 })(UsersAreaContainer);
