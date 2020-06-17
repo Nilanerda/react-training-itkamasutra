@@ -1,0 +1,7 @@
+.innerContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    min-height: calc(100vh - 5rem);
+}
