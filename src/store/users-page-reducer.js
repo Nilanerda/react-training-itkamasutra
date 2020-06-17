@@ -5,6 +5,7 @@ const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
 const PRELOADER_TOGGLE = 'PRELOADER_TOGGLE';
 const PAGINATION_INIT = 'PAGINATION_INIT';
 const SUBSCRIBE_IN_PROCESS_TOGGLE = 'SUBSCRIBE_IN_PROCESS_TOGGLE';
+const PRELOADER_INIT = 'PRELOADER_INIT';
 
 let initialState = {
     usersData: [],
@@ -14,6 +15,7 @@ let initialState = {
     isFetching: true,
     paginationInit: false,
     subscribeInProcess: [],
+    preloaderInit: true,
 };
 
 const usersPageReducer = (state = initialState, action) => {
@@ -57,8 +59,13 @@ const usersPageReducer = (state = initialState, action) => {
             return {
                 ...state,
                 subscribeInProcess: action.isFetching
-                ? [...state.subscribeInProcess, action.userId]
-                : state.subscribeInProcess.filter(userId => userId !== action.userId)
+                    ? [...state.subscribeInProcess, action.userId]
+                    : state.subscribeInProcess.filter(userId => userId !== action.userId)
+            }
+        case PRELOADER_INIT:
+            return {
+                ...state,
+                preloaderInit: action.preloaderInit
             }
         default:
             return state;
@@ -77,6 +84,12 @@ export const preloaderToggle = (isFetching) => ({type: PRELOADER_TOGGLE, isFetch
 
 export const paginationInit = (pagInit) => ({type: PAGINATION_INIT, pagInit})
 
-export const subscribeInProcessToggle = (isFetching, userId) => ({type: SUBSCRIBE_IN_PROCESS_TOGGLE, isFetching, userId})
+export const subscribeInProcessToggle = (isFetching, userId) => ({
+    type: SUBSCRIBE_IN_PROCESS_TOGGLE,
+    isFetching,
+    userId
+})
+
+export const preloadInit = (preloaderInit) => ({type: PRELOADER_INIT, preloaderInit})
 
 export default usersPageReducer;
