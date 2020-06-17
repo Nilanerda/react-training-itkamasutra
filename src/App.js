@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.scss';
-import HeaderContainer from "./components/MainPage/Header/HeaderContainer";
-import Navigation from "./components/MainPage/Navigation/Navigation";
-import ProfilePageContainer from "./components/MainPage/ProfilePage/ProfilePageContainer";
-import DialogPage from "./components/MainPage/DialogPage/DialogPage";
-import UsersPage from "./components/MainPage/UsersPage/UsersPage";
 import {Route} from "react-router-dom";
+import HeaderContainer from "./components/MainPage/Header/HeaderContainer";
+import ProfilePageContainer from "./components/MainPage/ProfilePage/ProfilePageContainer";
+import UsersPageContainer from "./components/MainPage/UsersPage/UsersPageContainer";
+import Navigation from "./components/MainPage/Navigation/Navigation";
+import DialogPage from "./components/MainPage/DialogPage/DialogPage";
 
 function App() {
     return (
@@ -18,7 +18,7 @@ function App() {
                 <Route path='/messages'
                        render={() => <DialogPage />}/>
                 <Route path='/users'
-                       render={() => <UsersPage />}/>
+                       render={() => <UsersPageContainer />}/>
             </main>
         </div>
     );
